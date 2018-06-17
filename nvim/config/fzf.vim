@@ -25,7 +25,11 @@ autocmd VimEnter * command! -nargs=* Rg
 
 " MAPS ---------------------------------------
 noremap <c-k> :Buffers<cr>
+noremap <c-j> :History<cr>
 noremap <c-p> :Files<cr>
+
+noremap <leader>t :BTags<cr>
+noremap <leader>T :Tags<cr>
 
 " ripgrep for search ocurrences
 nnoremap <c-_> :Rg<space>

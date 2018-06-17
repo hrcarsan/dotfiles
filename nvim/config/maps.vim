@@ -13,6 +13,8 @@
   " source vim configuration
   nnoremap <leader>vs :source $MYVIMRC<cr>:noh<cr>h
 
+  nnoremap <leader>d <c-]>
+
   " add \v (magic regex) to do normal regex searchs
   nnoremap / /\v
   vnoremap / /\v
@@ -54,26 +56,7 @@
 
   nnoremap <leader>i :IndentLinesToggle<cr>
   
-  " search
-  "function! FindDefinition(pattern)
-    "let pattern1 = 'function[\s\n\f\r\t ]\+'.a:pattern.'[\s\n\f\r\t ]*('
-    "let pattern2 = '\<'.a:pattern.'[\s\n\f\r\t ]*=[\s\n\f\r\t ]*function[\s\n\f\r\t ]\+'
-    "let pattern3 = 'class[\s\n\f\r\t ]\+'.a:pattern.'\>'
-
-    "let cmd  = 'silent grep! -sRnI --exclude-dir=.git . '
-    "let cmd .= ' -e '''.pattern1.''''
-    "let cmd .= ' -e '''.pattern2.''''
-    "let cmd .= ' -e '''.pattern3.''''
-
-    "execute cmd
-    "cw
-    "redraw!
-    "let @/ = a:pattern
-  "endfunction
-
-  "command! -nargs=1 FindDef call FindDefinition(<f-args>) | normal n
-  "nnoremap <leader>d :execute "FindDef ".expand("<cword>")<cr>
-
+  " Show hi group under cursor
   map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
             \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
             \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>

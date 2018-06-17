@@ -5,9 +5,9 @@ Plug 'santiagocardona/native'
 Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'ryanoasis/vim-devicons'
-Plug 'majutsushi/tagbar'
+"Plug 'majutsushi/tagbar'
 Plug 'yggdroot/indentline'
-Plug 'chrisbra/Colorizer'
+Plug 'chrisbra/Colorizer', { 'on': 'ColorHighlight' }
 
 " Syntax 
 Plug 'sheerun/vim-polyglot'
