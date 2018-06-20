@@ -1,32 +1,76 @@
 call plug#begin()
 
-" Interface
-Plug 'santiagocardona/native'
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                        INTERFACE
+" TODO:
+" - hightlight TODO
+" - hightlight support for js, ts, go, angular, css,
+"   html
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'santiagohecar/native'
 Plug 'vim-airline/vim-airline'
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'ryanoasis/vim-devicons'
-"Plug 'majutsushi/tagbar'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'yggdroot/indentline'
 Plug 'chrisbra/Colorizer', { 'on': 'ColorHighlight' }
 
-" Syntax 
-Plug 'sheerun/vim-polyglot'
-Plug 'jelera/vim-javascript-syntax', {'for': 'javascript'}
-Plug 'HerringtonDarkholme/yats.vim', {'for': 'typescript'}
 
-" Syntax checker
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"               SYNTAX AND LANGUAGES SUPPORT
+" TODO:
+" - support javascript, typescript, go, angular, css,
+"   html
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Plug 'sheerun/vim-polyglot'
+Plug 'StanAngeloff/php.vim', {'for': 'php'}
+Plug 'elzr/vim-json', {'for': 'json'}
+"Plug 'jelera/vim-javascript-syntax', {'for': 'javascript'}
+"Plug 'HerringtonDarkholme/yats.vim', {'for': 'typescript'}
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                      LINTER ENGINE
+" TODO:
+" - support javascript, typescript, go, angular
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'w0rp/ale'
 
-" Search
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                         SEARCH
+" TODO:
+" - support javascript, typescript, go, angular
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
-" Git
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                         GIT
+" TODO:
+" - show lines added, modified, and remove hightlighted
+" - study vim-fugitive
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
-" Edition
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                         EDITION
+" TODO:
+" - do something to avoid the caps lock in normal mode
+" - there are something better than nerdcommenter?
+" - study vim-surrond
+" - study auto-pairs
+" - study tabular
+" - study matchtagalways
+" - study vim-closetag
+" - study multiple cursors
+" - study emmet
+" - map commands to go to next and previous trailing whitespace
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'scrooloose/nerdcommenter'
+Plug 'ntpeters/vim-better-whitespace'
 "Plug 'tpope/vim-surround'
 "Plug 'jiangmiao/auto-pairs'
 "Plug 'godlygeek/tabular'
@@ -35,23 +79,28 @@ Plug 'scrooloose/nerdcommenter'
 "Plug 'terryma/vim-multiple-cursors'
 "Plug 'mattn/emmet-vim'
 
-" Utilities --------------------------
 
-"Rename the current file, usage :Rename NewFileName.js
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                       AUTOCOMPLETION
+" TODO:
+" - improve the tags
+" - test 'lvht/phpcd.vim' for php7
+" - study ternjs http://ternjs.net/ and test 'ternjs/tern_for_vim'
+" - would be good show the signature of the functions and the file
+"   tags come, test better Shougo/echodoc.vim
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                       UTILITIES
+" TODO:
+" - improve the tags
+" - check php actor
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'danro/rename.vim' , { 'on': 'Rename' }
-"Plug 'ntpeters/vim-better-whitespace'
-
 "Plug 'thaerkh/vim-workspace'
 "Plug 'adoy/vim-php-refactoring-toolbox'
 
-"Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install'}
-
-" Autocompletion
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-"Plug 'Shougo/echodoc.vim'
-"Plug 'kristijanhusak/deoplete-phpactor'
-
-"Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
-"Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
-
 call plug#end()
+

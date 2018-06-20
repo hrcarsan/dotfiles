@@ -1,87 +1,70 @@
+" INTERFACE
+syntax on                      " enable syntax highlight
+"filetype indent off            " disable autoident?
+set termguicolors              " enable True Color (16 million colors)
+"set t_Co=256                  " enable 256 colors
+set mouse=a                    " enable mouse in all modes, to copy/paste as usualy in terminal press the shift key
+set lazyredraw                 " avoid redraw the screen allways
+set scrolloff=3                " keep 3 lines below and above the cursor when move vertical
+set noshowmode                 " do not show if is in normal, insert, visual, airline do this 
+set nowrap                     " does not wrap the line
+"set spell                      "turns on spell checking
+set laststatus=2               " always show status line, for airline
+set backspace=indent,eol,start " allow delete with backspace
+set number                     " show line numbers
+let loaded_matchparen = 1      " highlight parenthesis
+set updatetime=100             " time to refresh the gutter signs
 
-  " basics
-  syntax on
-  filetype indent off
+" THEME
+colorscheme native             " set the current theme
 
-  set termguicolors
-  set nomodeline
-  set encoding=utf8
-  set mouse=a
-  set t_Co=256
-  set lazyredraw
-  set scrolloff=3
-  set noshowmode
-  set hidden
-  set ttyfast
-  set undofile
-  set nowrap
-  "set spell "turns on spell checking
+" FILE
+set nomodeline                 " modelines comes in some files, are used to set local buffer configs
+set encoding=utf8              " support unicode chars 
+set undofile                   " keep a file of undo history
+set hidden                     " avoid unload non active buffers
 
-  " for searchs
-  set ignorecase
-  set smartcase
-  set gdefault
-  set incsearch
-  set showmatch
-  set hlsearch
+" SEARCH
+set ignorecase                 " insensitive case on searchs
+set smartcase                  " become sensitive case when include uppercase in the search
+"set gdefault                  " replace all matches in the line 
+set incsearch                  " hightlight the first match when search
+set noshowmatch                " avoid jump to ( when type )
+set hlsearch                   " keep the matches higlighted after search
 
-  " always show status line
-  set laststatus=2
+" INDENTATION
+set autoindent                 " keep the indentation of the current line to the created bellow and above
+set tabstop=2                  " set the indent with to two spaces 
+set shiftwidth=2               " set the indent with to two spaces, used for >><< 
+set softtabstop=2              " set the indent with to two spaces 
+set expandtab                  " use spaces instead of tabs
 
-  " allow delete with backspace
-  set backspace=indent,eol,start
+" FOLD
+set foldcolumn=0               " hide fold column 
+set foldtext=""                " do not show first line of the folded text
 
-  "indentation
-  set autoindent
-  set tabstop=2
-  set shiftwidth=2
-  set softtabstop=2
-  set expandtab
+" create metafiles the dirs 
+if !isdirectory(expand('~/.vim/.undo'))
+  execute 'silent !mkdir ~/.vim/.backup ~/.vim/.swp ~/.vim/.undo ~/.vim/.session'
+endif
 
-  " fold
-  set foldcolumn=0
-  set foldtext=""
+set undodir=~/.vim/.undo/
+set backupdir=~/.vim/.backup/
+set directory=~/.vim/.swp/
 
-  " show line numbers
-  set number
+let g:netrw_dirhistmax=0
 
-  " create metafiles the dirs 
-  if !isdirectory(expand('~/.vim/.undo'))
-    execute 'silent !mkdir ~/.vim/.backup ~/.vim/.swp ~/.vim/.undo ~/.vim/.session'
-  endif
+" php.vim
+"let g:php_sql_heredoc = 0
+"let g:php_html_in_heredoc = 0
+"let g:pho_sql_nowdoc = 0
+"let g:php_html_in_nowdoc = 0
 
-  set undodir=~/.vim/.undo/
-  set backupdir=~/.vim/.backup/
-  set directory=~/.vim/.swp/
+"vim-json
+let g:vim_json_syntax_conceal = 0
 
-  " theme
-  colorscheme native
-
-  " globals
-  let loaded_matchparen = 1
-
-  " php.vim
-  let g:php_sql_heredoc = 0
-  let g:php_html_in_heredoc = 0
-  let g:pho_sql_nowdoc = 0
-  let g:php_html_in_nowdoc = 0
-
-  " vim-gitgutter
-  let g:gitgutter_realtime = 0
-  let g:gitgutter_eager = 0
-  let g:gitgutter_enabled = 0
-
-  " indentline
-  let g:indentLine_enabled = 1
-  let g:indentLine_char = "\ue621"
-  let g:indentLine_color_term = 101
-  let g:indentLine_color_gui = '#87875f'
-
-  "vim-json
-  let g:vim_json_syntax_conceal = 0
-
-  " vim-workspace
-  "let g:workspace_autosave = 0
-  "let g:workspace_nocompatible = 0
-  "let g:workspace_session_name = expand('$HOME/.vim/.session/'.substitute(getcwd(),'/','','g').'_session.vim')
-  "let g:workspace_persist_undo_history = 0
+" vim-workspace
+"let g:workspace_autosave = 0
+"let g:workspace_nocompatible = 0
+"let g:workspace_session_name = expand('$HOME/.vim/.session/'.substitute(getcwd(),'/','','g').'_session.vim')
+"let g:workspace_persist_undo_history = 0
