@@ -3,9 +3,13 @@ call plug#begin()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                        INTERFACE
 " TODO:
-" - hightlight TODO
 " - hightlight support for js, ts, go, angular, css,
 "   html
+" - handle all colorschemas in a single plugin
+" - support hightlight php and js inside html
+" - when search the hightlight color is ugly
+" - check nerdfonts, not all icons are supported with roboto
+"   https://github.com/ryanoasis/nerd-fonts/blob/master/bin/scripts/test-fonts.sh
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'santiagohecar/native'
 Plug 'vim-airline/vim-airline'
@@ -22,16 +26,18 @@ Plug 'chrisbra/Colorizer', { 'on': 'ColorHighlight' }
 "   html
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Plug 'sheerun/vim-polyglot'
-Plug 'StanAngeloff/php.vim', {'for': 'php'}
-Plug 'elzr/vim-json', {'for': 'json'}
+Plug 'StanAngeloff/php.vim',    {'for': 'php'}
+Plug 'elzr/vim-json',           {'for': 'json'}
+Plug 'pangloss/vim-javascript', {'for': 'javascript'}
 "Plug 'jelera/vim-javascript-syntax', {'for': 'javascript'}
 "Plug 'HerringtonDarkholme/yats.vim', {'for': 'typescript'}
-
+"Plug 'adoy/vim-php-refactoring-toolbox'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                      LINTER ENGINE
 " TODO:
 " - support javascript, typescript, go, angular
+" - hightlight line with error
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'w0rp/ale'
 
@@ -40,6 +46,7 @@ Plug 'w0rp/ale'
 "                         SEARCH
 " TODO:
 " - support javascript, typescript, go, angular
+" - colors for window search
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -60,23 +67,17 @@ Plug 'tpope/vim-fugitive'
 " TODO:
 " - do something to avoid the caps lock in normal mode
 " - there are something better than nerdcommenter?
-" - study vim-surrond
-" - study auto-pairs
-" - study tabular
-" - study matchtagalways
-" - study vim-closetag
-" - study multiple cursors
 " - study emmet
 " - map commands to go to next and previous trailing whitespace
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'scrooloose/nerdcommenter'
 Plug 'ntpeters/vim-better-whitespace'
-"Plug 'tpope/vim-surround'
-"Plug 'jiangmiao/auto-pairs'
-"Plug 'godlygeek/tabular'
-"Plug 'valloric/matchtagalways'
-"Plug 'git@github.com:alvan/vim-closetag.git'
-"Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'jiangmiao/auto-pairs'
+Plug 'godlygeek/tabular',       {'on': 'Tabularize'}
+Plug 'valloric/matchtagalways', {'for': 'html'}
+Plug 'alvan/vim-closetag',      {'for': 'html'}
 "Plug 'mattn/emmet-vim'
 
 
@@ -88,6 +89,7 @@ Plug 'ntpeters/vim-better-whitespace'
 " - study ternjs http://ternjs.net/ and test 'ternjs/tern_for_vim'
 " - would be good show the signature of the functions and the file
 "   tags come, test better Shougo/echodoc.vim
+" - snippets
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
@@ -100,7 +102,6 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'danro/rename.vim' , { 'on': 'Rename' }
 "Plug 'thaerkh/vim-workspace'
-"Plug 'adoy/vim-php-refactoring-toolbox'
 
 call plug#end()
 

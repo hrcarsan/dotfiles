@@ -42,7 +42,7 @@ nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
 
 " return to normal mode
 inoremap <c-c> <esc>
-nnoremap <c-c> :<c-c>
+nnoremap <c-c> <c-c>:<c-c>
 
 " cut/copy/paste
 vnor <C-X> "+x
@@ -54,6 +54,8 @@ vnor <C-V> :<C-U>set paste<CR>gvc<C-R>+<C-O>:set nopaste<CR><ESC>
 "nnoremap <leader>tw :ToggleWorkspace<CR>
 
 nnoremap <leader>n *N
+vnoremap <leader>n y/<C-R>"<CR>N
+
 nnoremap <leader>c :GitGutterToggle<cr>
 nnoremap <leader>z Vi{zfkj
 
@@ -84,3 +86,4 @@ function! s:RunShellCommand(cmdline)
   setlocal nomodifiable
   "1
 endfunction
+

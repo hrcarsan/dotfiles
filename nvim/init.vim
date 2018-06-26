@@ -1,4 +1,4 @@
-"_________              __  .__
+  "_________              __  .__
  "/   _____/____    _____/  |_|__|____     ____   ____
  "\_____  \\__  \  /    \   __\  \__  \   / ___\ /  _ \
  "/        \/ __ \|   |  \  | |  |/ __ \_/ /_/  >  <_> )
@@ -23,19 +23,71 @@ source $HOME/.config/nvim/config/deoplete.vim
 source $HOME/.config/nvim/config/ale.vim
 source $HOME/.config/nvim/config/ctags.vim
 source $HOME/.config/nvim/config/git.vim
+source $HOME/.config/nvim/config/json.vim
+source $HOME/.config/nvim/config/tabular.vim
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                           BASICS
 "
-" ctrl+o     go to the older cursor position
-" ctrl+i     go to the newer cursor position
-" gd         go to definition
+" <c-o>     go to the older cursor position
+" <c-i>     go to the newer cursor position
+" gd        go to definition
+"
+"           start record commands with q{a-z}, stop with q
+"           apply the macro with @{a-z}
+" qqaword ^cq@q@q to word word word
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                           EDITION
 "
 " ,i         toggle indent lines
-" ,s<space>  clean trailing whitespace (operator)
+"
+"            ,s<object> clean whitespace
+" ,s<space>  clean line of trailing whitespaces
+"
+"            cs<surrond><surround> change surround
+"            <surrond>  " ' ( ) [ ] { } <tag> > t
+" cs"'       "word" to 'word'
+" cs"<i>     'word' to <i>word<i>
+" cst"       <i>word<i> to "word"
+" cs)]       (word) to [word]
+"
+"            ds<surrond> delete surround
+" ds"        "word" to word
+"
+"            ys<object><surrond> add surround
+" yss"       entire line to "entire line"
+" ysiw<i>    word to <i>word<i>
+"
+"            v<object>S<surrond> surround in visual mode
+" viwS'      word to 'word'
+"
+"            autopairs (insert mode) | represents the cursor
+" |( to (|)
+" |[ to [|]
+" "|<bs>" to <empty>
+" (|<a-e>)word to (word)|
+"                           (normal mode)
+" <a-p>     toggle autopairs
+" <a-n>     move to the next close autopair char
+"
+" ,a=       align = above and below to the same column
+" ,a:       align = above and below to the same column
+"
+" <tag|> to <tag>|</tag>
+" <tag>|></tag> to <tag>
+"                    |
+"                  </tag>
+"
+"           change a word at n positions
+"           with ,ncgn the repeat with .
+" wo|rd type ,ncgnnew_word<c-c>..    new_word
+" word                               new_word
+" word                               new_word
+"           using visual block
+" |word type <c-v>jjInew_<c-c>   new_word
+"  word                          new_word
+"  word                          new_word
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                           UTILITIES
