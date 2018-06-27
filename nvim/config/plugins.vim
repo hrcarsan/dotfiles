@@ -29,8 +29,8 @@ Plug 'chrisbra/Colorizer', { 'on': 'ColorHighlight' }
 Plug 'StanAngeloff/php.vim',    {'for': 'php'}
 Plug 'elzr/vim-json',           {'for': 'json'}
 Plug 'pangloss/vim-javascript', {'for': 'javascript'}
-"Plug 'jelera/vim-javascript-syntax', {'for': 'javascript'}
-"Plug 'HerringtonDarkholme/yats.vim', {'for': 'typescript'}
+Plug 'HerringtonDarkholme/yats.vim'
+"Plug 'leafgarland/typescript-vim'
 "Plug 'adoy/vim-php-refactoring-toolbox'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
