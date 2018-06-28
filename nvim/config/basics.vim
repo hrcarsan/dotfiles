@@ -1,6 +1,6 @@
 " INTERFACE
 syntax on                      " enable syntax highlight
-"filetype indent off            " disable autoident?
+filetype indent off            " disable autoident
 set termguicolors              " enable True Color (16 million colors)
 "set t_Co=256                  " enable 256 colors
 set mouse=a                    " enable mouse in all modes, to copy/paste as usualy in terminal press the shift key
