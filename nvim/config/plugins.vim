@@ -11,7 +11,7 @@ call plug#begin()
 " - check nerdfonts, not all icons are supported with roboto
 "   https://github.com/ryanoasis/nerd-fonts/blob/master/bin/scripts/test-fonts.sh
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'santiagohecar/native'
+Plug 'santiagohecar/easycolors.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
@@ -29,8 +29,9 @@ Plug 'chrisbra/Colorizer', { 'on': 'ColorHighlight' }
 Plug 'StanAngeloff/php.vim',    {'for': 'php'}
 Plug 'elzr/vim-json',           {'for': 'json'}
 Plug 'pangloss/vim-javascript', {'for': 'javascript'}
-Plug 'HerringtonDarkholme/yats.vim'
-"Plug 'leafgarland/typescript-vim'
+Plug 'HerringtonDarkholme/yats.vim', {'for': 'typescript'}
+Plug 'othree/html5.vim'
+Plug 'hail2u/vim-css3-syntax'
 "Plug 'adoy/vim-php-refactoring-toolbox'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
