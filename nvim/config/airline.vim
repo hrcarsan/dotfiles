@@ -1,6 +1,7 @@
-let g:airline_theme = 'native'
+let g:airline_theme           = 'easycolors'
 let g:airline_powerline_fonts = 1
-let g:airline_mode_map = 
+
+let g:airline_mode_map =
 \{
   \ '__' : '-',
   \ 'n'  : 'N',
@@ -28,4 +29,3 @@ let g:airline#extensions#whitespace#enabled = 0
 " Just show the filename (no path) in the tab
 "let g:airline#extensions#tabline#fnamemod = ':t'
 
-"autocmd BufEnter * :AirlineRefresh

@@ -1,6 +1,8 @@
 " INTERFACE
 syntax on                      " enable syntax highlight
 filetype indent off            " disable autoident
+colorscheme easycolors         " set the current theme
+
 set termguicolors              " enable True Color (16 million colors)
 "set t_Co=256                  " enable 256 colors
 set mouse=a                    " enable mouse in all modes, to copy/paste as usualy in terminal press the shift key
@@ -14,9 +16,6 @@ set backspace=indent,eol,start " allow delete with backspace
 set number                     " show line numbers
 "let loaded_matchparen = 1      " highlight parenthesis
 set updatetime=100             " time to refresh the gutter signs
-
-" THEME
-colorscheme native             " set the current theme
 
 " FILE
 set nomodeline                 " modelines comes in some files, are used to set local buffer configs
@@ -43,6 +42,9 @@ set expandtab                  " use spaces instead of tabs
 set foldcolumn=0               " hide fold column
 set foldtext=""                " do not show first line of the folded text
 
+" OTHERS
+let g:netrw_dirhistmax=0       " disable netrw history
+
 " create metafiles the dirs
 if !isdirectory(expand('~/.vim/.undo'))
   execute 'silent !mkdir ~/.vim/.backup ~/.vim/.swp ~/.vim/.undo ~/.vim/.session'
@@ -51,14 +53,6 @@ endif
 set undodir=~/.vim/.undo/
 set backupdir=~/.vim/.backup/
 set directory=~/.vim/.swp/
-
-let g:netrw_dirhistmax=0
-
-" php.vim
-"let g:php_sql_heredoc = 0
-"let g:php_html_in_heredoc = 0
-"let g:pho_sql_nowdoc = 0
-"let g:php_html_in_nowdoc = 0
 
 " vim-workspace
 "let g:workspace_autosave = 0

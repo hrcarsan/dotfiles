@@ -3,9 +3,7 @@ call plug#begin()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                        INTERFACE
 " TODO:
-" - hightlight support for js, ts, go, angular, css,
-"   html
-" - handle all colorschemas in a single plugin
+" - hightlight support for go, angular
 " - support hightlight php and js inside html
 " - when search the hightlight color is ugly
 " - check nerdfonts, not all icons are supported with roboto
@@ -91,6 +89,7 @@ Plug 'alvan/vim-closetag',      {'for': 'html'}
 " - would be good show the signature of the functions and the file
 "   tags come, test better Shougo/echodoc.vim
 " - snippets
+" - shown error in command line
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
