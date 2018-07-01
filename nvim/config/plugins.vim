@@ -23,7 +23,6 @@ Plug 'chrisbra/Colorizer', { 'on': 'ColorHighlight' }
 " - support javascript, typescript, go, angular, css,
 "   html
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Plug 'sheerun/vim-polyglot'
 Plug 'StanAngeloff/php.vim',    {'for': 'php'}
 Plug 'elzr/vim-json',           {'for': 'json'}
 Plug 'pangloss/vim-javascript', {'for': 'javascript'}
@@ -35,8 +34,11 @@ Plug 'hail2u/vim-css3-syntax'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                      LINTER ENGINE
 " TODO:
-" - support javascript, typescript, go, angular
+" - learn about linting
+" - support go
 " - hightlight line with error
+" - setup fixers
+" - customize linters
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'w0rp/ale'
 
@@ -46,6 +48,8 @@ Plug 'w0rp/ale'
 " TODO:
 " - support javascript, typescript, go, angular
 " - colors for window search
+" - search result on files like sublime
+" - regex search
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -89,7 +93,7 @@ Plug 'alvan/vim-closetag',      {'for': 'html'}
 " - would be good show the signature of the functions and the file
 "   tags come, test better Shougo/echodoc.vim
 " - snippets
-" - shown error in command line
+" - now is showing an error in command line
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 

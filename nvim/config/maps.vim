@@ -1,10 +1,12 @@
-let mapleader = ","
+let mapleader = ','
 
 " open vim configuration in a new window
 nnoremap <leader>ve :vsplit $MYVIMRC<cr>
 
 " source vim configuration
 nnoremap <leader>vs :source $MYVIMRC<cr>:noh<cr>h
+
+nnoremap <leader>hi :vsplit ~/.config/nvim/native.json<cr>
 
 " save a file
 nnoremap <leader>w :w<cr>:<cr>
@@ -36,9 +38,9 @@ nnoremap Y y$
 nnoremap - :m .+1<cr>==
 nnoremap _ :m .-2<cr>==
 
-" enclosed width quotes
-nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
-nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
+" enclosed width "quotes"
+nnoremap <leader>" :normal ysiw"<cr>
+nnoremap <leader>' :normal ysiw'<cr>
 
 " return to normal mode
 inoremap <c-c> <esc>

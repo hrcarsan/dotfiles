@@ -11,7 +11,6 @@
    "\_/ |__|__|_|  / /____  >\___  >__| |____/|   __/
                 "\/       \/     \/           |__|
 
-
 source $HOME/.config/nvim/config/plugins.vim
 source $HOME/.config/nvim/config/basics.vim
 source $HOME/.config/nvim/config/maps.vim

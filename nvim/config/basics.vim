@@ -1,6 +1,10 @@
 " INTERFACE
 syntax on                      " enable syntax highlight
+filetype plugin on             " enable ftplugin/ load type specific configs
 filetype indent off            " disable autoident
+
+" theme
+let g:easycolor_path = expand('~/.config/nvim/colors/native.json')
 colorscheme easycolors         " set the current theme
 
 set termguicolors              " enable True Color (16 million colors)
