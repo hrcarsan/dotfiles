@@ -16,7 +16,6 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'yggdroot/indentline'
 Plug 'chrisbra/Colorizer', { 'on': 'ColorHighlight' }
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "               SYNTAX AND LANGUAGES SUPPORT
 " TODO:

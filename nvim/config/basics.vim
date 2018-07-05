@@ -7,6 +7,25 @@ filetype indent off            " disable autoident
 let g:easycolor_path = expand('~/.config/nvim/colors/native.json')
 colorscheme easycolors         " set the current theme
 
+let g:terminal_color_0  = g:easycolor['palette']['Sage']['hex']
+let g:terminal_color_1  = g:easycolor['palette']['AppleRed']['hex']
+let g:terminal_color_2  = g:easycolor['palette']['DarkGreen']['hex']
+let g:terminal_color_3  = g:easycolor['palette']['DarkOrange']['hex']
+let g:terminal_color_4  = g:easycolor['palette']['HonoluluBlue']['hex']
+let g:terminal_color_5  = g:easycolor['palette']['DarkMagenta']['hex']
+let g:terminal_color_6  = g:easycolor['palette']['SpringGreen']['hex']
+let g:terminal_color_7  = g:easycolor['palette']['Blonde']['hex']
+"let g:terminal_color_8  = g:easycolor['palette']['Tan']['hex']
+let g:terminal_color_9  = g:easycolor['palette']['Maroon']['hex']
+let g:terminal_color_10 = g:easycolor['palette']['Brown']['hex']
+let g:terminal_color_11 = g:easycolor['palette']['Ginger']['hex']
+let g:terminal_color_12 = g:easycolor['palette']['OxfordBlue']['hex']
+let g:terminal_color_13 = g:easycolor['palette']['DarkCoral']['hex']
+let g:terminal_color_14 = g:easycolor['palette']['DarkMagenta']['hex']
+let g:terminal_color_15 = g:easycolor['palette']['Blonde']['hex']
+let g:terminal_color_16 = g:easycolor['palette']['EerieBlack']['hex']
+let g:terminal_color_17 = g:easycolor['palette']['EerieBlack']['hex']
+
 set termguicolors              " enable True Color (16 million colors)
 "set t_Co=256                  " enable 256 colors
 set mouse=a                    " enable mouse in all modes, to copy/paste as usualy in terminal press the shift key

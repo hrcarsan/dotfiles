@@ -32,6 +32,6 @@ noremap <leader>t :BTags<cr>
 noremap <leader>T :Tags<cr>
 
 " ripgrep for search ocurrences
-nnoremap <c-_> :Rg<space>
-nnoremap <leader>f :exec "Rg ".expand("<cword>")<cr>
+"nnoremap <c-_> :Rg<space>
+"nnoremap <leader>f :exec "Rg ".expand("<cword>")<cr>
 nnoremap <leader>e :call fzf#vim#tags("'" . expand('<cword>'))<CR>

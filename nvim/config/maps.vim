@@ -1,3 +1,5 @@
+scriptencoding uft-8
+
 let mapleader = ','
 
 " open vim configuration in a new window
@@ -6,7 +8,7 @@ nnoremap <leader>ve :vsplit $MYVIMRC<cr>
 " source vim configuration
 nnoremap <leader>vs :source $MYVIMRC<cr>:noh<cr>h
 
-nnoremap <leader>hi :vsplit ~/.config/nvim/native.json<cr>
+nnoremap <leader>hi :execute 'vsplit '.g:easycolor_path<cr>
 
 " save a file
 nnoremap <leader>w :w<cr>:<cr>
@@ -66,26 +68,58 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
           \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
           \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
-command! -complete=shellcmd -nargs=+ Shell call s:RunShellCommand(<q-args>)
+"command! -complete=shellcmd -nargs=+ Shell call s:RunShellCommand(<q-args>)
 
-function! s:RunShellCommand(cmdline)
-  "echo a:cmdline
-  let expanded_cmdline = a:cmdline
+"function! s:RunShellCommand(cmdline)
+  ""echo a:cmdline
+  "let expanded_cmdline = a:cmdline
 
-  for part in split(a:cmdline, ' ')
-     if part[0] =~ '\v[%#<]'
-        let expanded_part = fnameescape(expand(part))
-        let expanded_cmdline = substitute(expanded_cmdline, part, expanded_part, '')
-     endif
-  endfor
-  botright new
-  setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile nowrap
-  "call setline(1, 'You entered:    ' . a:cmdline)
-  "call setline(2, 'Expanded Form:  ' .expanded_cmdline)
-  "call setline(3,substitute(getline(2),'.','=','g'))
-  execute '$read !'. expanded_cmdline
-  normal ggdd
-  setlocal nomodifiable
-  "1
+  "for part in split(a:cmdline, ' ')
+     "if part[0] =~ '\v[%#<]'
+        "let expanded_part = fnameescape(expand(part))
+        "let expanded_cmdline = substitute(expanded_cmdline, part, expanded_part, '')
+     "endif
+  "endfor
+  "botright new
+  "setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile nowrap
+  ""call setline(1, 'You entered:    ' . a:cmdline)
+  ""call setline(2, 'Expanded Form:  ' .expanded_cmdline)
+  ""call setline(3,substitute(getline(2),'.','=','g'))
+  "execute '$read !'. expanded_cmdline
+  "normal ggdd
+  "setlocal nomodifiable
+  ""1
+"endfunction
+
+"tnoremap <Esc> <C-\><C-n>
+"tnoremap <c-c> <C-\><C-n>
+
+
+command! -complete=shellcmd -nargs=+ Find call s:Find(<q-args>)
+
+function! s:Find(pattern)
+  execute 'silent new Find\ \ '.a:pattern
+  "augroup find
+    "au!
+    ""au BufRead <buffer> echo "hello"
+    "au filetype grep normal! n
+  "augroup END
+  execute 'silent r ! rg '.a:pattern
+  "normal! gg
+  "execute '/'.a:pattern
+  "normal! n
+  "call search(a:pattern)
+  let @/ = a:pattern
+  "redraw!
+  normal! ggn
+  "normal! nn
+  nnoremap <buffer> <c-x> :bd!<cr>:noh<cr>:<c-c>
+  nnoremap <buffer> <leader>w <nop>
+
+  "set filetype=grep
+
 endfunction
 
+
+nnoremap <c-_> :Find<space>
+nnoremap <leader>f *N:exec "Find ".expand("<cword>")<cr>
