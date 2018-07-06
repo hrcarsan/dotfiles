@@ -15,6 +15,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'yggdroot/indentline'
 Plug 'chrisbra/Colorizer', { 'on': 'ColorHighlight' }
+Plug 'google/vim-searchindex' " show the total of the search matches
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "               SYNTAX AND LANGUAGES SUPPORT

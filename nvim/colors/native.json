@@ -254,7 +254,7 @@
   {
     "normal":
     {
-      "a":       {"fg": "Blonde",     "bg": "Umber"},
+      "a":       {"fg": "Blonde",     "bg": "EerieBlack"},
       "b":       {"fg": "EerieBlack", "bg": "Blonde"},
       "c":       {"fg": "Blonde",     "bg": "Umber"},
       "x":       {"fg": "Blonde",     "bg": "Umber"},

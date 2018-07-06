@@ -97,24 +97,34 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 
 command! -complete=shellcmd -nargs=+ Find call s:Find(<q-args>)
 
+
 function! s:Find(pattern)
-  execute 'silent new Find\ \ '.a:pattern
+
+  let @/ = '\v'.a:pattern
+
+  "execute 'silent new Find\ \ '.shellescape(a:pattern)
+  execute 'silent new Find'
   "augroup find
     "au!
     ""au BufRead <buffer> echo "hello"
     "au filetype grep normal! n
   "augroup END
-  execute 'silent r ! rg '.a:pattern
+  let rg_command = 'silent r ! rg --line-number --heading --context 3 --color never '.
+                  \'--follow  --line-number-width 5 --no-config --encoding utf-8 -- '.shellescape(a:pattern)
+
+  execute rg_command
+  echom rg_command
   "normal! gg
   "execute '/'.a:pattern
   "normal! n
   "call search(a:pattern)
-  let @/ = a:pattern
   "redraw!
-  normal! ggn
+  normal! gg
+  execute "normal iFind pattern \"".a:pattern."\"\n"
   "normal! nn
   nnoremap <buffer> <c-x> :bd!<cr>:noh<cr>:<c-c>
   nnoremap <buffer> <leader>w <nop>
+  setlocal nonumber
 
   "set filetype=grep
 
