@@ -94,42 +94,35 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 "tnoremap <Esc> <C-\><C-n>
 "tnoremap <c-c> <C-\><C-n>
 
-
 command! -complete=shellcmd -nargs=+ Find call s:Find(<q-args>)
 
 
 function! s:Find(pattern)
 
-  let @/ = '\v'.a:pattern
-
-  "execute 'silent new Find\ \ '.shellescape(a:pattern)
+  " create a new buffer
   execute 'silent new Find'
-  "augroup find
-    "au!
-    ""au BufRead <buffer> echo "hello"
-    "au filetype grep normal! n
-  "augroup END
+
+  " save the pattern in a buffer var
+  let b:fif_pattern = a:pattern
+
+  setlocal nonumber
+  set filetype=fif
+
+  nnoremap <buffer> <c-x> :bd!<cr>:noh<cr>:<c-c>
+
+  " make the search
+  call feedkeys('/'.a:pattern."\<cr>")
+
   let rg_command = 'silent r ! rg --line-number --heading --context 3 --color never '.
                   \'--follow  --line-number-width 5 --no-config --encoding utf-8 -- '.shellescape(a:pattern)
 
   execute rg_command
-  echom rg_command
-  "normal! gg
-  "execute '/'.a:pattern
-  "normal! n
-  "call search(a:pattern)
-  "redraw!
+
+  call append(0, ['Find pattern "'.a:pattern.'"'])
   normal! gg
-  execute "normal iFind pattern \"".a:pattern."\"\n"
-  "normal! nn
-  nnoremap <buffer> <c-x> :bd!<cr>:noh<cr>:<c-c>
-  nnoremap <buffer> <leader>w <nop>
-  setlocal nonumber
-
-  "set filetype=grep
-
 endfunction
 
 
 nnoremap <c-_> :Find<space>
-nnoremap <leader>f *N:exec "Find ".expand("<cword>")<cr>
+nnoremap <leader>f :exec "Find ".expand("<cword>")<cr>
+
