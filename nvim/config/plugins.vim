@@ -3,26 +3,28 @@ call plug#begin()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                        INTERFACE
 " TODO:
+" - support term colors and identline color in easycolors, fzf too
 " - hightlight support for go, angular
 " - support hightlight php and js inside html
 " - when search the hightlight color is ugly
 " - check nerdfonts, not all icons are supported with roboto
 "   https://github.com/ryanoasis/nerd-fonts/blob/master/bin/scripts/test-fonts.sh
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'santiagohecar/easycolors.vim'
+Plug 'santiagohecar/easycolors.vim' " themes handler
 Plug 'vim-airline/vim-airline'
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'yggdroot/indentline'
-Plug 'chrisbra/Colorizer', { 'on': 'ColorHighlight' }
+Plug 'chrisbra/Colorizer', { 'on': 'ColorHighlight' } " Show hightlighted hex colors
 Plug 'google/vim-searchindex' " show the total of the search matches
-Plug 'moll/vim-bbye'
+Plug 'moll/vim-bbye' " avoid close window when close a buffer
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "               SYNTAX AND LANGUAGES SUPPORT
 " TODO:
-" - support javascript, typescript, go, angular, css,
-"   html
+" - support go, angular
+"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'StanAngeloff/php.vim',    {'for': 'php'}
 Plug 'elzr/vim-json',           {'for': 'json'}
@@ -32,12 +34,12 @@ Plug 'othree/html5.vim'
 Plug 'hail2u/vim-css3-syntax'
 "Plug 'adoy/vim-php-refactoring-toolbox'
 
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                      LINTER ENGINE
 " TODO:
 " - learn about linting
 " - support go
-" - hightlight line with error
 " - setup fixers
 " - customize linters
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -45,15 +47,11 @@ Plug 'w0rp/ale'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                         SEARCH
-" TODO:
-" - support javascript, typescript, go, angular
-" - colors for window search
-" - search result on files like sublime
-" - regex search
+"                             SEARCH
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf.vim'      " fuzzy finder for files, tags, etc...
+Plug 'santiagohecar/fif.vim' " Find in Files
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

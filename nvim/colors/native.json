@@ -74,6 +74,8 @@
       "fzf3":             {"fg":  "Blonde",       "bg": "Shadow"},
       "Title":            {"fg":  "DarkGreen"},
       "Quote":            {"fg":  "HonoluluBlue"},
+      "WildMenu":         {"fg":  "EerieBlack", "bg": "Blonde"},
+      "StatusLine":       {"fg":  "Blonde",     "bg": "Umber"},
       "ALEErrorSign":     {"fg":  "AppleRed",   "bg": "DarkVanilla", "opt": "bold"},
       "ALEWarningSign":   {"fg":  "DarkOrange", "bg": "DarkVanilla", "opt": "bold"}
     },
