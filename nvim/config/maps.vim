@@ -72,7 +72,7 @@ nnoremap <leader>c :GitGutterToggle<cr>
 nnoremap <leader>z Vi{zfkj
 
 " Show hi group under cursor
-"map <leader>sy :call ShowHi()<cr>
+map <leader>hs :call ShowHi()<cr>
 
 
 function! ShowHi()

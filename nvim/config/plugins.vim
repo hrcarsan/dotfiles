@@ -11,6 +11,7 @@ call plug#begin()
 "   https://github.com/ryanoasis/nerd-fonts/blob/master/bin/scripts/test-fonts.sh
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'santiagohecar/easycolors.vim' " themes handler
+"Plug 'itchyny/lightline.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }

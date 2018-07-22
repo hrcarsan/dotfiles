@@ -29,7 +29,7 @@ let g:terminal_color_17 = g:easycolor['palette']['EerieBlack']['hex']
 set termguicolors              " enable True Color (16 million colors)
 "set t_Co=256                  " enable 256 colors
 set mouse=a                    " enable mouse in all modes, to copy/paste as usualy in terminal press the shift key
-set lazyredraw                 " avoid redraw the screen allways
+"set lazyredraw                 " avoid redraw the screen allways
 set scrolloff=3                " keep 3 lines below and above the cursor when move vertical
 set noshowmode                 " do not show if is in normal, insert, visual, airline do this
 set nowrap                     " does not wrap the line
@@ -37,8 +37,9 @@ set nowrap                     " does not wrap the line
 set laststatus=2               " always show status line, for airline
 set backspace=indent,eol,start " allow delete with backspace
 set number                     " show line numbers
-"let loaded_matchparen = 1      " highlight parenthesis
-set updatetime=100             " time to refresh the gutter signs
+let loaded_matchparen = 1      " highlight parenthesis, uncomment to disable
+"set updatetime=100             " time to refresh the gutter signs
+set synmaxcol=180 
 
 " FILE
 set nomodeline                 " modelines comes in some files, are used to set local buffer configs
@@ -70,7 +71,7 @@ let g:netrw_dirhistmax=0       " disable netrw history
 
 " create metafiles the dirs
 if !isdirectory(expand('~/.vim/.undo'))
-  execute 'silent !mkdir ~/.vim/.backup ~/.vim/.swp ~/.vim/.undo ~/.vim/.session'
+  execute 'silent !mkdir -p ~/.vim/.backup ~/.vim/.swp ~/.vim/.undo ~/.vim/.session'
 endif
 
 set undodir=~/.vim/.undo/
