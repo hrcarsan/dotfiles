@@ -1,2 +1,7 @@
-nvim/plugged/
+vim/plugged
 tags
+vim/.session
+vim/.swp
+vim/.undo
+vim/.backup
+vim/autoload/plug.vim

@@ -3,7 +3,7 @@ scriptencoding uft-8
 let mapleader = ','
 
 " open vim configuration in a new window
-nnoremap <leader>ve :vsplit $MYVIMRC<cr>
+nnoremap <leader>ve :vsplit $HOME/dotfiles/vim/.vimrc<cr>
 
 " source vim configuration
 nnoremap <leader>vs :source $MYVIMRC<cr>:noh<cr>h
@@ -67,7 +67,6 @@ vnor <c-v> :<C-U>set paste<CR>gvc<C-R>+<C-O>:set nopaste<CR><ESC>
 " save workspace
 "nnoremap <leader>tw :ToggleWorkspace<CR>
 
-
 nnoremap <leader>c :GitGutterToggle<cr>
 nnoremap <leader>z Vi{zfkj
 
@@ -81,34 +80,9 @@ function! ShowHi()
   let trans = synIDattr(synID(line('.'), col('.'), 0), 'name')
   let lo    = synIDattr(synIDtrans(synID(line('.'), col('.'), 1)), 'name')
 
-  echo 'hi<'.hi.'> '.
-      \'trans<'.trans.'> '.
-      \'lo<'.lo.'>'
+  echo 'hi<'.hi.'> trans<'.trans.'> lo<'.lo.'>'
 
 endfunction
-
-"command! -complete=shellcmd -nargs=+ Shell call s:RunShellCommand(<q-args>)
-
-"function! s:RunShellCommand(cmdline)
-  ""echo a:cmdline
-  "let expanded_cmdline = a:cmdline
-
-  "for part in split(a:cmdline, ' ')
-     "if part[0] =~ '\v[%#<]'
-        "let expanded_part = fnameescape(expand(part))
-        "let expanded_cmdline = substitute(expanded_cmdline, part, expanded_part, '')
-     "endif
-  "endfor
-  "botright new
-  "setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile nowrap
-  ""call setline(1, 'You entered:    ' . a:cmdline)
-  ""call setline(2, 'Expanded Form:  ' .expanded_cmdline)
-  ""call setline(3,substitute(getline(2),'.','=','g'))
-  "execute '$read !'. expanded_cmdline
-  "normal ggdd
-  "setlocal nomodifiable
-  ""1
-"endfunction
 
 "tnoremap <Esc> <C-\><C-n>
 "tnoremap <c-c> <C-\><C-n>

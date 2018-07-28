@@ -9,9 +9,9 @@ call plug#begin()
 " - when search the hightlight color is ugly
 " - check nerdfonts, not all icons are supported with roboto
 "   https://github.com/ryanoasis/nerd-fonts/blob/master/bin/scripts/test-fonts.sh
+" - test 'itchyny/lightline.vim'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'santiagohecar/easycolors.vim' " themes handler
-"Plug 'itchyny/lightline.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
@@ -95,6 +95,11 @@ Plug 'alvan/vim-closetag',      {'for': 'html'}
 " - snippets
 " - now is showing an error in command line
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if !has('nvim') " dependencies needed for deoplete on vim8
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 

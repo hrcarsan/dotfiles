@@ -11,19 +11,19 @@
    "\_/ |__|__|_|  / /____  >\___  >__| |____/|   __/
                 "\/       \/     \/           |__|
 
-source $HOME/.config/nvim/config/plugins.vim
-source $HOME/.config/nvim/config/basics.vim
-source $HOME/.config/nvim/config/maps.vim
-source $HOME/.config/nvim/config/airline.vim
-source $HOME/.config/nvim/config/indentline.vim
-source $HOME/.config/nvim/config/nerdtree.vim
-source $HOME/.config/nvim/config/fzf.vim
-source $HOME/.config/nvim/config/deoplete.vim
-source $HOME/.config/nvim/config/ale.vim
-source $HOME/.config/nvim/config/ctags.vim
-source $HOME/.config/nvim/config/git.vim
-source $HOME/.config/nvim/config/json.vim
-source $HOME/.config/nvim/config/tabular.vim
+source $HOME/dotfiles/vim/config/plugins.vim
+source $HOME/dotfiles/vim/config/basics.vim
+source $HOME/dotfiles/vim/config/maps.vim
+source $HOME/dotfiles/vim/config/airline.vim
+source $HOME/dotfiles/vim/config/indentline.vim
+source $HOME/dotfiles/vim/config/nerdtree.vim
+source $HOME/dotfiles/vim/config/fzf.vim
+source $HOME/dotfiles/vim/config/deoplete.vim
+source $HOME/dotfiles/vim/config/ale.vim
+source $HOME/dotfiles/vim/config/ctags.vim
+source $HOME/dotfiles/vim/config/git.vim
+source $HOME/dotfiles/vim/config/json.vim
+source $HOME/dotfiles/vim/config/tabular.vim
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                           BASICS
@@ -35,6 +35,8 @@ source $HOME/.config/nvim/config/tabular.vim
 "           start record commands with q{a-z}, stop with q
 "           apply the macro with @{a-z}
 " qqaword ^cq@q@q to word word word
+"
+" :verbose set property?  see where is defined a property
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                           EDITION
