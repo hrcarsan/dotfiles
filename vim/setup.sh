@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # nvim settings folders/files
 [ -f ~/.config ] || mkdir ~/.config
