@@ -41,6 +41,7 @@ chmod -R go-rwx data
 mv my.cnf my.cnf.def
 mkdir /etc/mysql/
 cp support-files/my-default.cnf /etc/mysql/my.cnf
+./bin/mysqld_safe --user=mysql > /dev/null 2>&1 &
 ./bin/mysql_secure_installation
 cp support-files/mysql.server /etc/init.d/mysql
 update-rc.d mysql defaults
@@ -113,13 +114,12 @@ cp php.ini-development /etc/php/php.ini
 cp /usr/local/php/etc/php-fpm.conf.default /etc/php/php-fpm.conf
 
 cp sapi/fpm/php-fpm.service  /etc/systemd/system/
-sed 's:${prefix}\|${exec_prefix}:/usr/local/php:g' /etc/systemd/system/php-fpm.service
+sed -i 's:${prefix}\|${exec_prefix}:/usr/local/php:g' /etc/systemd/system/php-fpm.service
 systemctl enable php-fpm
 systemctl start php-fpm
 
 # timezonedb
-cd /usr/local/php/bin
-pecl install timezonedb
+/usr/local/php/bin/pecl install timezonedb
 echo "extension=timezonedb.so"  >> /etc/php/php.ini
 
 # ioncube installation
@@ -127,7 +127,20 @@ cd /tmp
 wget http://downloads3.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz
 tar xvfz ioncube_loaders_lin_x86-64.tar.gz
 cd ioncube
-mkdir -p /usr/local/php/lib/php/extensions/no-debug-non-zts-20090626
 cp ioncube_loader_lin_5.3.so /usr/local/php/lib/php/extensions/no-debug-non-zts-20090626
 echo "zend_extension = /usr/local/php/lib/php/extensions/no-debug-non-zts-20090626/ioncube_loader_lin_5.3.so" >> /etc/php/php.ini
 
+# xcache
+cd /tmp
+apt-get install autoconf
+
+export XCACHE_VER=3.1.0
+wget http://xcache.lighttpd.net/pub/Releases/$XCACHE_VER/xcache-$XCACHE_VER.tar.gz
+tar xzvf xcache-$XCACHE_VER.tar.gz
+cd xcache-$XCACHE_VER
+/usr/local/php/bin/phpize
+./configure --enable-xcache
+make
+make install
+
+echo "extension=xcache.so"  >> /etc/php/php.ini
