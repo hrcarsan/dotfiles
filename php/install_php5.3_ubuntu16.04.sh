@@ -1,7 +1,11 @@
 #!/bin/sh
 
+if [ "$(id -u)" != "0" ]; then
+   echo "Run as root"
+   exit 1
+fi
+
 ######################## INSTALL MYSQL #################################
-sudo su
 
 # dependencies
 apt-get -y install cmake bison flex git build-essential libncurses5-dev
@@ -125,6 +129,7 @@ cd /tmp
 wget http://downloads3.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz
 tar xvfz ioncube_loaders_lin_x86-64.tar.gz
 cd ioncube
+mkdir -p /usr/local/php/lib/php/extensions/no-debug-non-zts-20090626
 cp ioncube_loader_lin_5.3.so /usr/local/php/lib/php/extensions/no-debug-non-zts-20090626
 echo "zend_extension = /usr/local/php/lib/php/extensions/no-debug-non-zts-20090626/ioncube_loader_lin_5.3.so" >> /etc/php/php.ini
 
