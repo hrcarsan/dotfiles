@@ -31,7 +31,6 @@ make
 make install
 
 echo "export PATH=\"\$PATH:/usr/local/mysql/bin\"" >> /etc/bash.bashrc
-source /etc/bash.bashrc
 
 cd /usr/local/mysql
 chown -R mysql:mysql .
@@ -42,8 +41,7 @@ chmod -R go-rwx data
 mv my.cnf my.cnf.def
 mkdir /etc/mysql/
 cp support-files/my-default.cnf /etc/mysql/my.cnf
-mysqld_safe --user=mysql > /dev/null 2>&1 &
-mysql_secure_installation
+./bin/mysql_secure_installation
 cp support-files/mysql.server /etc/init.d/mysql
 update-rc.d mysql defaults
 service mysql start
@@ -108,7 +106,6 @@ make
 make install
 
 echo "export PATH=\"\$PATH:/usr/local/php/bin\"" >> /etc/bash.bashrc
-source /etc/bash.bashrc
 
 mkdir /etc/php
 mkdir /etc/php/conf.d
@@ -121,6 +118,7 @@ systemctl enable php-fpm
 systemctl start php-fpm
 
 # timezonedb
+cd /usr/local/php/bin
 pecl install timezonedb
 echo "extension=timezonedb.so"  >> /etc/php/php.ini
 
