@@ -5,52 +5,8 @@ if [ "$(id -u)" != "0" ]; then
    exit 1
 fi
 
-######################## INSTALL MYSQL #################################
-
-# dependencies
-apt-get -y install cmake bison flex git build-essential libncurses5-dev
-
-# install openssl old (for work too with php5.3)
-cd /usr/local/src/
-wget https://www.openssl.org/source/old/0.9.x/openssl-0.9.8zh.tar.gz
-tar -zxvf openssl-0.9.8zh.tar.gz
-cd openssl-0.9.8zh
-./config --prefix=/usr/local --openssldir=/usr/local/openssl-0.9.8
-make
-make install
-
-useradd -r -U mysql -M -d /usr/local/mysql/data
-
-#  install mysql server
-cd /usr/local/src/
-wget https://downloads.mysql.com/archives/get/file/mysql-5.6.23.tar.gz
-tar xzvf mysql-5.6.23.tar.gz
-cd mysql-5.6.23
-cmake . -DWITH_SSL=yes
-make
-make install
-
-echo "export PATH=\"\$PATH:/usr/local/mysql/bin\"" >> /etc/bash.bashrc
-
-cd /usr/local/mysql
-chown -R mysql:mysql .
-scripts/mysql_install_db --user=mysql
-chown -R root:root .
-chown -R mysql:mysql data
-chmod -R go-rwx data
-mv my.cnf my.cnf.def
-mkdir /etc/mysql/
-cp support-files/my-default.cnf /etc/mysql/my.cnf
-./bin/mysqld_safe --user=mysql > /dev/null 2>&1 &
-./bin/mysql_secure_installation
-cp support-files/mysql.server /etc/init.d/mysql
-update-rc.d mysql defaults
-service mysql start
-
-
-#################### INSTALL PHP #########################################
-
 # dependecies
+# REQUIRE mysql 5.6!
 apt-get install -y build-essential libxml2-dev libssl-dev libbz2-dev libpng-dev libc-client-dev libkrb5-dev libmcrypt-dev \
                    pkg-config libmysqlclient-dev libreadline-dev libtool autoconf nginx
 
@@ -114,7 +70,7 @@ cp php.ini-development /etc/php/php.ini
 cp /usr/local/php/etc/php-fpm.conf.default /etc/php/php-fpm.conf
 
 cp sapi/fpm/php-fpm.service  /etc/systemd/system/
-sed -i 's:${prefix}\|${exec_prefix}:/usr/local/php:g' /etc/systemd/system/php-fpm.service
+sed -i 's:${prefix}/var:/usr/local/php/var:;s:${exec_prefix}:/usr/local/php:;s:${prefix}/etc:/etc/php:' /etc/systemd/system/php-fpm.service
 systemctl enable php-fpm
 systemctl start php-fpm
 
@@ -139,7 +95,7 @@ wget http://xcache.lighttpd.net/pub/Releases/$XCACHE_VER/xcache-$XCACHE_VER.tar.
 tar xzvf xcache-$XCACHE_VER.tar.gz
 cd xcache-$XCACHE_VER
 /usr/local/php/bin/phpize
-./configure --enable-xcache
+./configure --enable-xcache --with-php-config=/usr/local/php/bin/php-config
 make
 make install
 
