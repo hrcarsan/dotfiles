@@ -1,14 +1,14 @@
 #!/bin/bash
 
 if [ "$(id -u)" != "0" ]; then
-   echo "Run as root"
+   echo "Run with sudo"
    exit 1
 fi
 
 # dependencies
 apt-get -y install cmake bison flex git build-essential libncurses5-dev
 
-# install openssl old (for work too with php5.3)
+# install openssl compatible (for work too with php5.3)
 cd /usr/local/src/
 wget https://www.openssl.org/source/old/0.9.x/openssl-0.9.8zh.tar.gz
 tar -zxvf openssl-0.9.8zh.tar.gz

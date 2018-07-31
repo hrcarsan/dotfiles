@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ "$(id -u)" != "0" ]; then
-   echo "Run as root"
+   echo "Run as sudo"
    exit 1
 fi
 

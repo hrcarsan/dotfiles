@@ -20,11 +20,11 @@ function! s:MapKeys()
     \'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
     \'0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
     \'-', '_', '~', '^', '.', ',', ':', '!', '#', '=', '%', '$', '@',
-    \'<', '>', '/', '\', '<space>', '<bs>'
+    \'<', '>', '/', '<space>', '<bs>'
   \]
 
   for key in keys
-    execute "inoremap <expr> ".key." <SID>KeyPress('".escape(key, '\')."')"
+    execute "inoremap <expr> ".key." <SID>KeyPress('".key."')"
   endfor
 
 endfunction

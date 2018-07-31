@@ -1,12 +1,13 @@
 #!/bin/bash
 
 if [ "$(id -u)" != "0" ]; then
-   echo "Run as root"
+   echo "Run with sudo"
    exit 1
 fi
 
 # dependecies
-# REQUIRE mysql 5.6!
+source ../mysql/install_mysql5.6.23.sh
+
 apt-get install -y build-essential libxml2-dev libssl-dev libbz2-dev libpng-dev libc-client-dev libkrb5-dev libmcrypt-dev \
                    pkg-config libmysqlclient-dev libreadline-dev libtool autoconf nginx
 
