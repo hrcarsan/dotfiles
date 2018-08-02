@@ -5,7 +5,8 @@ filetype indent off            " disable autoident
 
 " theme
 let g:easycolor_path = expand('~/dotfiles/vim/colors/native.json')
-colorscheme easycolors         " set the current theme
+
+silent! colorscheme easycolors " set the current theme
 
 "let g:terminal_color_0  = g:easycolor['palette']['Sage']['hex']
 "let g:terminal_color_1  = g:easycolor['palette']['AppleRed']['hex']
