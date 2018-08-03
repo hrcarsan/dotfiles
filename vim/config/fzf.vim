@@ -22,4 +22,4 @@ noremap <c-p> :Files<cr>
 noremap <leader>t :BTags<cr>
 noremap <leader>T :Tags<cr>
 
-nnoremap <leader>e :call fzf#vim#tags("'".expand('<cword>'))<CR>
+nnoremap <leader>d :call fzf#vim#tags("'".expand('<cword>'))<CR>

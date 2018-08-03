@@ -1,1 +1,4 @@
-"au BufWritePost * silent! !eval '[ -f "/home/santiago/inkcloud/ctags" ] && /home/santiago/inkcloud/ctags' &
+let s:ctags = getcwd().'/ctags'
+
+au BufWritePost * call system('[ -x "'.s:ctags.'" ] && '.s:ctags.' >/dev/null 2>&1 &')
+
