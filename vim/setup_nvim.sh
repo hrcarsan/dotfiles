@@ -22,6 +22,6 @@ cd ctags
 ./autogen.sh
 ./configure
 make
-make install
+sudo make install
 
 echo "Finish!"
