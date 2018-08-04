@@ -6,6 +6,7 @@ if [ "$(id -u)" != "0" ]; then
 fi
 
 # dependencies
+apt-get update
 apt-get -y install cmake bison flex git build-essential libncurses5-dev
 
 # install openssl compatible (for work too with php5.3)
@@ -29,6 +30,7 @@ make
 make install
 
 echo "export PATH=\"\$PATH:/usr/local/mysql/bin\"" >> /etc/bash.bashrc
+export PATH="$PATH:/usr/local/mysql/bin"
 
 cd /usr/local/mysql
 chown -R mysql:mysql .

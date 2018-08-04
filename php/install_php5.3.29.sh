@@ -6,10 +6,11 @@ if [ "$(id -u)" != "0" ]; then
 fi
 
 # dependecies
-source ../mysql/install_mysql5.6.23.sh
+source ~/dotfiles/mysql/install_mysql5.6.23.sh
 
+apt-get update
 apt-get install -y build-essential libxml2-dev libssl-dev libbz2-dev libpng-dev libc-client-dev libkrb5-dev libmcrypt-dev \
-                   pkg-config libmysqlclient-dev libreadline-dev libtool autoconf nginx
+                   pkg-config libreadline-dev libmysqlclient-dev libtool autoconf nginx
 
 # libcurl
 cd /usr/local/include
@@ -64,6 +65,7 @@ make
 make install
 
 echo "export PATH=\"\$PATH:/usr/local/php/bin\"" >> /etc/bash.bashrc
+export PATH="$PATH:/usr/local/php/bin"
 
 mkdir /etc/php
 mkdir /etc/php/conf.d
