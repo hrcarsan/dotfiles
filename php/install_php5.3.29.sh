@@ -14,8 +14,8 @@ apt-get install -y build-essential libxml2-dev libssl-dev libbz2-dev libpng-dev 
 
 # libcurl
 cd /usr/local/include
-sudo ln -s /usr/include/x86_64-linux-gnu/curl curl
-sudo apt-get install libcurl4-gnutls-dev
+ln -s /usr/include/x86_64-linux-gnu/curl curl
+apt-get install libcurl4-gnutls-dev
 
 # install php
 cd /usr/local/src/
@@ -66,6 +66,7 @@ make install
 
 echo "export PATH=\"\$PATH:/usr/local/php/bin\"" >> /etc/bash.bashrc
 export PATH="$PATH:/usr/local/php/bin"
+ln -s /usr/local/php/bin/php /usr/bin/php
 
 mkdir /etc/php
 mkdir /etc/php/conf.d
