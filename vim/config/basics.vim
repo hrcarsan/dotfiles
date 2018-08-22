@@ -61,6 +61,7 @@ set smartcase                  " become sensitive case when include uppercase in
 set incsearch                  " hightlight the first match when search
 set noshowmatch                " avoid jump to ( when type )
 set hlsearch                   " keep the matches higlighted after search
+set grepprg=rg\ --vimgrep      " use ripgrep by default
 
 " INDENTATION
 set autoindent                 " keep the indentation of the current line to the created bellow and above
