@@ -19,11 +19,14 @@ source $HOME/dotfiles/vim/config/indentline.vim
 source $HOME/dotfiles/vim/config/nerdtree.vim
 source $HOME/dotfiles/vim/config/fzf.vim
 source $HOME/dotfiles/vim/config/deoplete.vim
+"source $HOME/dotfiles/vim/config/ncm2.vim
 source $HOME/dotfiles/vim/config/ale.vim
 source $HOME/dotfiles/vim/config/ctags.vim
 source $HOME/dotfiles/vim/config/git.vim
 source $HOME/dotfiles/vim/config/json.vim
 source $HOME/dotfiles/vim/config/tabular.vim
+source $HOME/dotfiles/vim/config/comfortable_motion.vim
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                           BASICS

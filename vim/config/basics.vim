@@ -38,7 +38,7 @@ set nowrap                     " does not wrap the line
 set laststatus=2               " always show status line, for airline
 set backspace=indent,eol,start " allow delete with backspace
 set number                     " show line numbers
-let loaded_matchparen = 1      " highlight parenthesis, uncomment to disable
+"let loaded_matchparen = 1      " highlight parenthesis, uncomment to disable
 set updatetime=100             " time to refresh the gutter signs
 set textwidth=0                " 0 to avoid the text be wraped until write
 "set ttimeout
@@ -47,6 +47,7 @@ set synmaxcol=180              " only higlighted to that column
 set noshowcmd                  " not show the current typed normal command
 set noruler                    " hide line,col from the status line
 "set redrawtime=10000           " avoid disable syntax for large files
+set shortmess+=c               " suppress message match x of x
 
 " FILE
 set nomodeline                 " modelines comes in some files, are used to set local buffer configs
@@ -61,7 +62,7 @@ set smartcase                  " become sensitive case when include uppercase in
 set incsearch                  " hightlight the first match when search
 set noshowmatch                " avoid jump to ( when type )
 set hlsearch                   " keep the matches higlighted after search
-set grepprg=rg\ --vimgrep      " use ripgrep by default
+set grepprg=rg\ --vimgrep      " use ripgrep instead of grep
 
 " INDENTATION
 set autoindent                 " keep the indentation of the current line to the created bellow and above

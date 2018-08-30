@@ -12,7 +12,7 @@ nnoremap <leader>vs :source $MYVIMRC<cr>:noh<cr>h
 nnoremap <leader>hi :execute 'vsplit '.g:easycolor_path<cr>
 
 " save a file
-nnoremap <leader>w :w<cr>:<cr>
+nnoremap <leader>w :silent w<cr>:<c-c>
 
 " quit
 nnoremap <leader>q :qa<cr>
@@ -64,6 +64,9 @@ vnor <c-y> "+y
 inor <c-v> <C-O>:set paste<CR><C-R>+<C-O>:set nopaste<CR>
 vnor <c-v> :<C-U>set paste<CR>gvc<C-R>+<C-O>:set nopaste<CR><ESC>
 
+nmap ,fn :let @+=expand("%")<CR>
+nmap ,fp :let @+=expand("%:p")<CR>
+
 " save workspace
 "nnoremap <leader>tw :ToggleWorkspace<CR>
 
@@ -92,4 +95,8 @@ augroup fif
   au filetype fif IndentLinesDisable
   au filetype fif DisableWhitespace
 augroup END
+
+" move down/up in complete panel with tab and shitf + tab
+inoremap <expr><tab>   pumvisible()? "\<c-n>": "\<tab>"
+inoremap <expr><s-tab> pumvisible()? "\<c-p>": "\<s-tab>"
 

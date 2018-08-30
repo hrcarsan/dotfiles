@@ -1,10 +1,6 @@
 set completeopt-=preview
+"set completeopt=noinsert,menuone,noselect
 let g:deoplete#enable_at_startup = 1
-
-" move down/up in complete panel with tab and shitf + tab
-inoremap <expr><tab>   pumvisible()? "\<c-n>": "\<tab>"
-inoremap <expr><s-tab> pumvisible()? "\<c-p>": "\<s-tab>"
-
 
 " fix cursor flashing after popup is shown
 let s:popup_visible = 0
