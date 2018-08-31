@@ -84,7 +84,6 @@ Plug 'valloric/matchtagalways', {'for': 'html'}
 Plug 'alvan/vim-closetag',      {'for': 'html'}
 "Plug 'mattn/emmet-vim'
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                       AUTOCOMPLETION
 " TODO:
@@ -96,20 +95,12 @@ Plug 'alvan/vim-closetag',      {'for': 'html'}
 " - snippets
 " - now is showing an error in command line
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"if !has('nvim') " dependencies needed for deoplete on vim8
-  "Plug 'roxma/nvim-yarp'
-  "Plug 'roxma/vim-hug-neovim-rpc'
-"endif
+if !has('nvim') " dependencies needed for deoplete on vim8
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-
-"Plug 'ncm2/ncm2'
-"Plug 'roxma/nvim-yarp'
-"Plug 'ncm2/ncm2-bufword'
-"Plug 'ncm2/ncm2-path'
-"Plug 'ncm2/ncm2-tagprefix'
-"Plug 'Shougo/neco-syntax'
-"Plug 'ncm2/ncm2-syntax'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                       UTILITIES

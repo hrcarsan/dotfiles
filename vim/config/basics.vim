@@ -48,6 +48,7 @@ set noshowcmd                  " not show the current typed normal command
 set noruler                    " hide line,col from the status line
 "set redrawtime=10000           " avoid disable syntax for large files
 set shortmess+=c               " suppress message match x of x
+set completeopt=menu           " show menu for completion
 
 " FILE
 set nomodeline                 " modelines comes in some files, are used to set local buffer configs
