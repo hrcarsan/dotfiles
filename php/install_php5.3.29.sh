@@ -35,7 +35,6 @@ cd php-$PHP_VERSION
   --enable-zip \
   --with-gd \
   --with-freetype-dir=/usr/include/freetype2/ \
-  --with-freetype \
   --enable-mysqlnd \
   --with-mysql=mysqlnd \
   --with-mysqli=mysqlnd \
