@@ -10,7 +10,7 @@ source ~/dotfiles/mysql/install_mysql5.6.23.sh
 
 apt-get update
 apt-get install -y build-essential libxml2-dev libssl-dev libbz2-dev libpng-dev libc-client-dev libkrb5-dev libmcrypt-dev \
-                   pkg-config libreadline-dev libmysqlclient-dev libtool autoconf nginx
+                   pkg-config libreadline-dev libmysqlclient-dev libtool autoconf nginx libgd-dev
 
 # libcurl
 cd /usr/local/include
@@ -34,6 +34,8 @@ cd php-$PHP_VERSION
   --enable-soap \
   --enable-zip \
   --with-gd \
+  --with-freetype-dir=/usr/include/freetype2/ \
+  --with-freetype \
   --enable-mysqlnd \
   --with-mysql=mysqlnd \
   --with-mysqli=mysqlnd \
