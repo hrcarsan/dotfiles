@@ -28,10 +28,6 @@ vnoremap / /\v
 nnoremap ? ?\v
 vnoremap ? ?\v
 
-" find in files
-nnoremap <c-_> :FindInFiles<space>
-nnoremap <leader>f :exec "FiF ".expand("<cword>")<cr>
-
 " highlight the word under cursor
 nnoremap <leader>n *N
 vnoremap <leader>n y/<c-r>"<cr>
@@ -64,8 +60,7 @@ vnor <c-y> "+y
 inor <c-v> <C-O>:set paste<CR><C-R>+<C-O>:set nopaste<CR>
 vnor <c-v> :<C-U>set paste<CR>gvc<C-R>+<C-O>:set nopaste<CR><ESC>
 
-nmap ,fn :let @+=expand("%")<CR>
-nmap ,fp :let @+=expand("%:p")<CR>
+nmap ,fn :let @+=expand("%:t")<CR>
 
 " save workspace
 "nnoremap <leader>tw :ToggleWorkspace<CR>
@@ -89,12 +84,6 @@ endfunction
 
 "tnoremap <Esc> <C-\><C-n>
 "tnoremap <c-c> <C-\><C-n>
-
-augroup fif
-  au!
-  au filetype fif IndentLinesDisable
-  au filetype fif DisableWhitespace
-augroup END
 
 " move down/up in complete panel with tab and shitf + tab
 inoremap <expr><tab>   pumvisible()? "\<c-n>": "\<tab>"

@@ -2,55 +2,30 @@
 syntax on                      " enable syntax highlight
 filetype plugin on             " enable ftplugin/ load type specific configs
 filetype indent off            " disable autoident
-
-" theme
-let g:easycolor_path = expand('~/dotfiles/vim/colors/native.json')
-
 silent! colorscheme easycolors " set the current theme
-
-"let g:terminal_color_0  = g:easycolor['palette']['Sage']['hex']
-"let g:terminal_color_1  = g:easycolor['palette']['AppleRed']['hex']
-"let g:terminal_color_2  = g:easycolor['palette']['DarkGreen']['hex']
-"let g:terminal_color_3  = g:easycolor['palette']['DarkOrange']['hex']
-"let g:terminal_color_4  = g:easycolor['palette']['HonoluluBlue']['hex']
-"let g:terminal_color_5  = g:easycolor['palette']['DarkMagenta']['hex']
-"let g:terminal_color_6  = g:easycolor['palette']['SpringGreen']['hex']
-"let g:terminal_color_7  = g:easycolor['palette']['Blonde']['hex']
-""let g:terminal_color_8  = g:easycolor['palette']['Tan']['hex']
-"let g:terminal_color_9  = g:easycolor['palette']['Maroon']['hex']
-"let g:terminal_color_10 = g:easycolor['palette']['Brown']['hex']
-"let g:terminal_color_11 = g:easycolor['palette']['Ginger']['hex']
-"let g:terminal_color_12 = g:easycolor['palette']['OxfordBlue']['hex']
-"let g:terminal_color_13 = g:easycolor['palette']['DarkCoral']['hex']
-"let g:terminal_color_14 = g:easycolor['palette']['DarkMagenta']['hex']
-"let g:terminal_color_15 = g:easycolor['palette']['Blonde']['hex']
-"let g:terminal_color_16 = g:easycolor['palette']['EerieBlack']['hex']
-"let g:terminal_color_17 = g:easycolor['palette']['EerieBlack']['hex']
-
 set termguicolors              " enable True Color (16 million colors)
-"set t_Co=256                  " enable 256 colors
-set mouse=a                    " enable mouse in all modes, to copy/paste as usualy in terminal press the shift key
-"set lazyredraw                 " avoid redraw the screen allways (shown the cursor in the ruler)
-set scrolloff=3                " keep 3 lines below and above the cursor when move vertical
-set noshowmode                 " do not show if is in normal, insert, visual, airline do this
-set nowrap                     " does not wrap the line
-"set spell                      "turns on spell checking
-set laststatus=2               " always show status line, for airline
-set backspace=indent,eol,start " allow delete with backspace
 set number                     " show line numbers
-"let loaded_matchparen = 1      " highlight parenthesis, uncomment to disable
+set scrolloff=3                " keep 3 lines below and above the cursor when move vertical
+set nowrap                     " does not wrap the line
+set noshowmode                 " do not show if is in normal, insert, visual, airline do this
+set laststatus=2               " always show status line, for airline
+set completeopt=menu           " show menu for completion
+set noruler                    " hide line,col from the status line
+"set lazyredraw                 " avoid redraw the screen allways (shown the cursor in the ruler)
+"set spell                      "turns on spell checking
+set synmaxcol=180              " only higlighted to that column
 set updatetime=100             " time to refresh the gutter signs
 set textwidth=0                " 0 to avoid the text be wraped until write
+"let loaded_matchparen = 1      " highlight parenthesis, uncomment to disable
+set shortmess+=c               " suppress message match x of x
+set noshowcmd                  " not show the current typed normal command
+set mouse=a                    " enable mouse in all modes, to copy/paste as usualy in terminal press the shift key
 "set ttimeout
 "set ttimeoutlen=10
-set synmaxcol=180              " only higlighted to that column
-set noshowcmd                  " not show the current typed normal command
-set noruler                    " hide line,col from the status line
-"set redrawtime=10000           " avoid disable syntax for large files
-set shortmess+=c               " suppress message match x of x
-set completeopt=menu           " show menu for completion
+set redrawtime=10000           " avoid disable syntax for large files
 
 " FILE
+set backspace=indent,eol,start " allow delete with backspace
 set nomodeline                 " modelines comes in some files, are used to set local buffer configs
 set encoding=utf8              " support unicode chars
 set undofile                   " keep a file of undo history

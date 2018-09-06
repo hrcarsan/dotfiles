@@ -25,6 +25,8 @@ source $HOME/dotfiles/vim/config/git.vim
 source $HOME/dotfiles/vim/config/json.vim
 source $HOME/dotfiles/vim/config/tabular.vim
 source $HOME/dotfiles/vim/config/comfortable_motion.vim
+source $HOME/dotfiles/vim/config/fif.vim
+source $HOME/dotfiles/vim/config/better_whitespace.vim
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -33,6 +35,18 @@ source $HOME/dotfiles/vim/config/comfortable_motion.vim
 " <c-o>     go to the older cursor position
 " <c-i>     go to the newer cursor position
 " gd        go to definition
+"
+" [[        go to the previous function
+" ]]        go to the next function
+"
+" [{        go to the opening curly bracket
+" ]}        go to the closing curly bracket
+"
+" [(        go to the opening parentheses
+" ])        go to the closing parentheses
+"
+" [w        go to the previos trailing whitespace
+" ]w        go to the next trailing whitespace
 "
 "           start record commands with q{a-z}, stop with q
 "           apply the macro with @{a-z}

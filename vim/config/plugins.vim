@@ -3,10 +3,8 @@ call plug#begin()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                        INTERFACE
 " TODO:
-" - support term colors and identline color in easycolors, fzf too
 " - hightlight support for go, angular
 " - support hightlight php and js inside html
-" - when search the hightlight color is ugly
 " - check nerdfonts, not all icons are supported with roboto
 "   https://github.com/ryanoasis/nerd-fonts/blob/master/bin/scripts/test-fonts.sh
 " - test 'itchyny/lightline.vim'
@@ -72,7 +70,6 @@ Plug 'tpope/vim-fugitive'
 " - do something to avoid the caps lock in normal mode
 " - there are something better than nerdcommenter?
 " - study emmet
-" - map commands to go to next and previous trailing whitespace
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'scrooloose/nerdcommenter'
 Plug 'ntpeters/vim-better-whitespace'
@@ -93,7 +90,6 @@ Plug 'alvan/vim-closetag',      {'for': 'html'}
 " - would be good show the signature of the functions and the file
 "   tags come, test better Shougo/echodoc.vim
 " - snippets
-" - now is showing an error in command line
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if !has('nvim') " dependencies needed for deoplete on vim8
   Plug 'roxma/nvim-yarp'
@@ -105,7 +101,6 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                       UTILITIES
 " TODO:
-" - improve the tags
 " - check php actor
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'danro/rename.vim' , { 'on': 'Rename' }
