@@ -3,8 +3,7 @@ call plug#begin()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                        INTERFACE
 " TODO:
-" - hightlight support for go, angular
-" - support hightlight php and js inside html
+" - horizontal scroll
 " - check nerdfonts, not all icons are supported with roboto
 "   https://github.com/ryanoasis/nerd-fonts/blob/master/bin/scripts/test-fonts.sh
 " - test 'itchyny/lightline.vim'
@@ -23,7 +22,8 @@ Plug 'yuttie/comfortable-motion.vim'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "               SYNTAX AND LANGUAGES SUPPORT
 " TODO:
-" - support go, angular
+" - support angular
+" - support hightlight php and js inside html
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'StanAngeloff/php.vim',    {'for': 'php'}
@@ -33,13 +33,12 @@ Plug 'HerringtonDarkholme/yats.vim', {'for': 'typescript'}
 Plug 'othree/html5.vim'
 Plug 'hail2u/vim-css3-syntax'
 "Plug 'adoy/vim-php-refactoring-toolbox'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                      LINTER ENGINE
 " TODO:
-" - learn about linting
-" - support go
 " - setup fixers
 " - customize linters
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -67,7 +66,6 @@ Plug 'tpope/vim-fugitive'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                         EDITION
 " TODO:
-" - do something to avoid the caps lock in normal mode
 " - there are something better than nerdcommenter?
 " - study emmet
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -85,6 +83,7 @@ Plug 'alvan/vim-closetag',      {'for': 'html'}
 "                       AUTOCOMPLETION
 " TODO:
 " - improve the tags
+" - ctags for go
 " - test 'lvht/phpcd.vim' for php7
 " - study ternjs http://ternjs.net/ and test 'ternjs/tern_for_vim'
 " - would be good show the signature of the functions and the file

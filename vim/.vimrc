@@ -27,6 +27,7 @@ source $HOME/dotfiles/vim/config/tabular.vim
 source $HOME/dotfiles/vim/config/comfortable_motion.vim
 source $HOME/dotfiles/vim/config/fif.vim
 source $HOME/dotfiles/vim/config/better_whitespace.vim
+source $HOME/dotfiles/vim/config/go.vim
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

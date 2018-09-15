@@ -16,7 +16,7 @@ set noruler                    " hide line,col from the status line
 set synmaxcol=180              " only higlighted to that column
 set updatetime=100             " time to refresh the gutter signs
 set textwidth=0                " 0 to avoid the text be wraped until write
-"let loaded_matchparen = 1      " highlight parenthesis, uncomment to disable
+let loaded_matchparen = 1      " highlight parenthesis, uncomment to disable
 set shortmess+=c               " suppress message match x of x
 set noshowcmd                  " not show the current typed normal command
 set mouse=a                    " enable mouse in all modes, to copy/paste as usualy in terminal press the shift key

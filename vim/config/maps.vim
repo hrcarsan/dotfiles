@@ -23,10 +23,10 @@ nnoremap gd <c-]>
 nnoremap Y y$
 
 " add \v (magic regex) to do normal regex searchs
-nnoremap / /\v
-vnoremap / /\v
-nnoremap ? ?\v
-vnoremap ? ?\v
+"nnoremap / /\v
+"vnoremap / /\v
+"nnoremap ? ?\v
+"vnoremap ? ?\v
 
 " highlight the word under cursor
 nnoremap <leader>n *N
@@ -49,6 +49,8 @@ nmap <leader>" ysiw"
 nmap <leader>' ysiw'
 vmap <leader>" S"
 vmap <leader>' S'
+
+nnoremap <leader>fc :%s/\r//g<cr>
 
 " return to normal mode
 inoremap <c-c> <esc>

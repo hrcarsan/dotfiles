@@ -1,5 +1,5 @@
 
-function g:GenerateTags()
+function! g:GenerateTags()
 
   let ctags_exe = getcwd().'/ctags'
 
