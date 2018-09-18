@@ -29,6 +29,9 @@ source $HOME/dotfiles/vim/config/fif.vim
 source $HOME/dotfiles/vim/config/better_whitespace.vim
 source $HOME/dotfiles/vim/config/go.vim
 
+let g:auto_save = 1 
+let g:auto_save_silent = 1
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                           BASICS

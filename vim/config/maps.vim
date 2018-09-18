@@ -12,7 +12,7 @@ nnoremap <leader>vs :source $MYVIMRC<cr>:noh<cr>h
 nnoremap <leader>hi :execute 'vsplit '.g:easycolor_path<cr>
 
 " save a file
-nnoremap <leader>w :silent w<cr>:<c-c>
+"nnoremap <leader>w :silent w<cr>:<c-c>
 
 " quit
 nnoremap <leader>q :qa<cr>
