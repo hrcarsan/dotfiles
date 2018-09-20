@@ -23,6 +23,7 @@ set mouse=a                    " enable mouse in all modes, to copy/paste as usu
 "set ttimeout
 "set ttimeoutlen=10
 set redrawtime=10000           " avoid disable syntax for large files
+set guicursor=                 " fix for 'q' chars in some terminals
 
 " FILE
 set backspace=indent,eol,start " allow delete with backspace
