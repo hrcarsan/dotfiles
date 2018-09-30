@@ -1,6 +1,6 @@
 let g:deoplete#enable_at_startup = 1
 
-call deoplete#custom#option('max_list', 20)
+silent! call deoplete#custom#option('max_list', 20)
 
 " fix cursor flashing after popup is shown
 let s:popup_visible = 0
