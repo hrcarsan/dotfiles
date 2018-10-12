@@ -31,6 +31,8 @@ make install
 
 echo "export PATH=\"\$PATH:/usr/local/mysql/bin\"" >> /etc/bash.bashrc
 export PATH="$PATH:/usr/local/mysql/bin"
+ln -s /usr/local/mysql/bin/mysql /usr/bin/mysql
+ln -s /usr/local/mysql/bin/mysqldump /usr/bin/mysqldump
 
 cd /usr/local/mysql
 chown -R mysql:mysql .

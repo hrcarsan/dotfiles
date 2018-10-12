@@ -6,9 +6,11 @@ if [ "$(id -u)" != "0" ]; then
 fi
 
 # dependecies
+source ~/dotfiles/mysql/install_mysql5.6.23.sh
+
 apt-get update
 apt-get install -y build-essential libxml2-dev libssl-dev libbz2-dev libpng-dev libc-client-dev libkrb5-dev libmcrypt-dev \
-                   pkg-config libreadline-dev libmysqlclient-dev libtool autoconf nginx libgd-dev
+                   pkg-config libreadline-dev libmysqlclient-dev libtool autoconf nginx libgd-dev curl
 
 # libcurl
 cd /usr/local/include
@@ -73,7 +75,8 @@ cp php.ini-development /etc/php/php.ini
 cp /usr/local/php/etc/php-fpm.conf.default /etc/php/php-fpm.conf
 
 cp sapi/fpm/php-fpm.service  /etc/systemd/system/
-sed -i 's:${prefix}/var:/usr/local/php/var:;s:${exec_prefix}:/usr/local/php:;s:${prefix}/etc:/etc/php:' /etc/systemd/system/php-fpm.service
+#sed -i 's:${prefix}/var:/usr/local/php/var:;s:${exec_prefix}:/usr/local/php:;s:${prefix}/etc:/etc/php:' /etc/systemd/system/php-fpm.service
+sed -i 's:/usr/local/php/etc:/etc/php:' /etc/systemd/system/php-fpm.service
 systemctl enable php-fpm
 systemctl start php-fpm
 
