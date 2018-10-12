@@ -1,0 +1,104 @@
+#!/bin/bash
+
+if [ "$(id -u)" != "0" ]; then
+   echo "Run with sudo"
+   exit 1
+fi
+
+# dependecies
+apt-get update
+apt-get install -y build-essential libxml2-dev libssl-dev libbz2-dev libpng-dev libc-client-dev libkrb5-dev libmcrypt-dev \
+                   pkg-config libreadline-dev libmysqlclient-dev libtool autoconf nginx libgd-dev
+
+# libcurl
+cd /usr/local/include
+ln -s /usr/include/x86_64-linux-gnu/curl curl
+apt-get install libcurl4-gnutls-dev
+
+# install php
+cd /usr/local/src/
+export PHP_VERSION=7.0.32
+curl -SL "http://php.net/get/php-$PHP_VERSION.tar.gz/from/this/mirror" -o php-$PHP_VERSION.tar.gz
+tar -xzvf php-$PHP_VERSION.tar.gz
+cd php-$PHP_VERSION
+./configure \
+  --prefix=/usr/local/php \
+  --with-config-file-path=/etc/php \
+  --with-config-file-scan-dir=/etc/php/conf.d \
+  --enable-mbstring \
+  --with-curl \
+  --with-openssl \
+  --with-xmlrpc \
+  --enable-soap \
+  --enable-zip \
+  --with-gd \
+  --with-freetype-dir=/usr/include/freetype2/ \
+  --enable-mysqlnd \
+  --with-mysql=mysqlnd \
+  --with-mysqli=mysqlnd \
+  --enable-bcmath \
+  --with-bz2 \
+  --enable-calendar \
+  --enable-exif \
+  --enable-ftp \
+  --with-gettext \
+  --with-imap \
+  --with-imap-ssl \
+  --with-kerberos \
+  --with-mcrypt \
+  --enable-pcntl \
+  --with-pdo-mysql \
+  --with-mhash \
+  --with-readline \
+  --enable-sockets \
+  --enable-sysvmsg \
+  --enable-sysvsem \
+  --enable-sysvshm \
+  --enable-shmop \
+  --enable-wddx \
+  --with-zlib \
+  --enable-fpm \
+  --with-fpm-user=www-data \
+  --with-fpm-group=www-data
+make
+make install
+
+echo "export PATH=\"\$PATH:/usr/local/php/bin\"" >> /etc/bash.bashrc
+export PATH="$PATH:/usr/local/php/bin"
+ln -s /usr/local/php/bin/php /usr/bin/php
+ln -s /usr/local/php/bin/pecl /usr/bin/pecl
+
+mkdir -p /etc/php/conf.d
+cp php.ini-development /etc/php/php.ini
+cp /usr/local/php/etc/php-fpm.conf.default /etc/php/php-fpm.conf
+
+cp sapi/fpm/php-fpm.service  /etc/systemd/system/
+sed -i 's:${prefix}/var:/usr/local/php/var:;s:${exec_prefix}:/usr/local/php:;s:${prefix}/etc:/etc/php:' /etc/systemd/system/php-fpm.service
+systemctl enable php-fpm
+systemctl start php-fpm
+
+# timezonedb
+pecl install timezonedb
+echo "extension=timezonedb.so"  >> /etc/php/php.ini
+
+# ioncube installation
+cd /tmp
+wget http://downloads3.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz
+tar xvfz ioncube_loaders_lin_x86-64.tar.gz
+cd ioncube
+cp ioncube_loader_lin_7.0.so /usr/local/php/lib/php/extensions/no-debug-non-zts-20151012
+echo "zend_extension = /usr/local/php/lib/php/extensions/no-debug-non-zts-20151012/ioncube_loader_lin_7.0.so" >> /etc/php/php.ini
+
+# redis
+cd /tmp
+wget http://download.redis.io/releases/redis-stable.tar.gz
+tar xzf redis-stable.tar.gz
+cd redis-stable
+make
+sudo apt-get install tcl8.5 -y
+sudo make install
+cd utils
+sudo ./install_server.sh
+pecl install redis
+echo "extension=redis.so"  >> /etc/php/php.ini
+
