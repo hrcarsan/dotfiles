@@ -50,6 +50,10 @@ nmap <leader>' ysiw'
 vmap <leader>" S"
 vmap <leader>' S'
 
+nmap <leader>[ ysiw]
+nmap <leader>{ ysiw}
+nmap <leader>( ysiw)
+
 nnoremap <leader>fc :%s/\r//g<cr>
 
 " return to normal mode

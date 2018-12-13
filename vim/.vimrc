@@ -30,6 +30,8 @@ source $HOME/dotfiles/vim/config/better_whitespace.vim
 source $HOME/dotfiles/vim/config/go.vim
 source $HOME/dotfiles/vim/config/auto_save.vim
 
+let g:phpunit_testroot = ''
+let g:phpunit_bin = 'webdcs/tests/run'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                           BASICS
@@ -55,6 +57,10 @@ source $HOME/dotfiles/vim/config/auto_save.vim
 " qqaword ^cq@q@q to word word word
 "
 " :verbose set property?  see where is defined a property
+"
+" g<c-g>    visual, count selection
+"
+" :g/^\s*$/d delete empty lines
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                           EDITION

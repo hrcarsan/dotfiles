@@ -34,6 +34,7 @@ Plug 'othree/html5.vim'
 Plug 'hail2u/vim-css3-syntax'
 "Plug 'adoy/vim-php-refactoring-toolbox'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'c9s/phpunit.vim'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
