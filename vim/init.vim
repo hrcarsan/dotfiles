@@ -1,1 +1,1 @@
-source $HOME/dotfiles/vim/.vimrc
+source $HOME/.config/nvim/.vimrc

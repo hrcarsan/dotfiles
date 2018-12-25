@@ -56,13 +56,13 @@ set foldtext=""                " do not show first line of the folded text
 let g:netrw_dirhistmax=0       " disable netrw history
 
 " create metafiles the dirs
-if !isdirectory(expand('~/.vim/.undo'))
-  execute 'silent !mkdir -p ~/.vim/.backup ~/.vim/.swp ~/.vim/.undo ~/.vim/.session'
+if !isdirectory(expand('~/.config/nvim/.undo'))
+  execute 'silent !mkdir -p ~/.config/nvim/.backup ~/.config/nvim/.swp ~/.config/nvim/.undo ~/.config/nvim/.session'
 endif
 
-set undodir=~/.vim/.undo
-set backupdir=~/.vim/.backup
-set directory=~/.vim/.swp
+set undodir=~/.config/nvim/.undo
+set backupdir=~/.config/nvim/.backup
+set directory=~/.config/nvim/.swp
 
 " vim-workspace
 "let g:workspace_autosave = 0

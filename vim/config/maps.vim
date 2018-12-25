@@ -3,7 +3,7 @@ scriptencoding uft-8
 let mapleader = ','
 
 " open vim configuration in a new window
-nnoremap <leader>ve :vsplit $HOME/dotfiles/vim/.vimrc<cr>
+nnoremap <leader>ve :vsplit $HOME/.config/nvim/.vimrc<cr>
 
 " source vim configuration
 nnoremap <leader>vs :source $MYVIMRC<cr>:noh<cr>h

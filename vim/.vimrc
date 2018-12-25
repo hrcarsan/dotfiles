@@ -11,24 +11,24 @@
    "\_/ |__|__|_|  / /____  >\___  >__| |____/|   __/
                 "\/       \/     \/           |__|
 
-source $HOME/dotfiles/vim/config/plugins.vim
-source $HOME/dotfiles/vim/config/basics.vim
-source $HOME/dotfiles/vim/config/maps.vim
-source $HOME/dotfiles/vim/config/airline.vim
-source $HOME/dotfiles/vim/config/indentline.vim
-source $HOME/dotfiles/vim/config/nerdtree.vim
-source $HOME/dotfiles/vim/config/fzf.vim
-source $HOME/dotfiles/vim/config/deoplete.vim
-source $HOME/dotfiles/vim/config/ale.vim
-source $HOME/dotfiles/vim/config/ctags.vim
-source $HOME/dotfiles/vim/config/git.vim
-source $HOME/dotfiles/vim/config/json.vim
-source $HOME/dotfiles/vim/config/tabular.vim
-source $HOME/dotfiles/vim/config/comfortable_motion.vim
-source $HOME/dotfiles/vim/config/fif.vim
-source $HOME/dotfiles/vim/config/better_whitespace.vim
-source $HOME/dotfiles/vim/config/go.vim
-source $HOME/dotfiles/vim/config/auto_save.vim
+source $HOME/.config/nvim/config/plugins.vim
+source $HOME/.config/nvim/config/basics.vim
+source $HOME/.config/nvim/config/maps.vim
+source $HOME/.config/nvim/config/airline.vim
+source $HOME/.config/nvim/config/indentline.vim
+source $HOME/.config/nvim/config/nerdtree.vim
+source $HOME/.config/nvim/config/fzf.vim
+source $HOME/.config/nvim/config/deoplete.vim
+source $HOME/.config/nvim/config/ale.vim
+source $HOME/.config/nvim/config/ctags.vim
+source $HOME/.config/nvim/config/git.vim
+source $HOME/.config/nvim/config/json.vim
+source $HOME/.config/nvim/config/tabular.vim
+source $HOME/.config/nvim/config/comfortable_motion.vim
+source $HOME/.config/nvim/config/fif.vim
+source $HOME/.config/nvim/config/better_whitespace.vim
+source $HOME/.config/nvim/config/go.vim
+source $HOME/.config/nvim/config/auto_save.vim
 
 let g:phpunit_testroot = ''
 let g:phpunit_bin = 'webdcs/tests/run'
