@@ -69,3 +69,15 @@ set directory=~/.config/nvim/.swp
 "let g:workspace_nocompatible = 0
 "let g:workspace_session_name = expand('$HOME/.vim/.session/'.substitute(getcwd(),'/','','g').'_session.vim')
 "let g:workspace_persist_undo_history = 0
+
+command! -complete=shellcmd -nargs=+ New call s:NewFile(<q-args>)
+
+function! s:NewFile(filename)
+
+  execute 'silent !touch '.a:filename.
+        \ ' && chown $UGID '.a:filename.
+        \ ' && chmod 664 '.a:filename
+
+  execute "edit ".a:filename
+endfunction
+
