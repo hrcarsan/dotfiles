@@ -76,7 +76,7 @@ function! s:NewFile(filename)
 
   execute 'silent !touch '.a:filename.
         \ ' && chown $UGID '.a:filename.
-        \ ' && chmod 664 '.a:filename
+        \ ' && chmod 775 '.a:filename
 
   execute "edit ".a:filename
 endfunction
