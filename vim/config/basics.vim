@@ -62,7 +62,7 @@ endif
 
 set undodir=~/.config/nvim/.undo
 set backupdir=~/.config/nvim/.backup
-set directory=~/.config/nvim/.swp
+set directory=~/.config/nvim/.swp//
 
 " vim-workspace
 "let g:workspace_autosave = 0
