@@ -2,7 +2,10 @@
 syntax on                      " enable syntax highlight
 filetype plugin on             " enable ftplugin/ load type specific configs
 filetype indent off            " disable autoident
+
+let g:easycolor_path = $HOME."/.config/nvim/plugged/easycolors.vim/colors/light+.json"
 silent! colorscheme easycolors " set the current theme
+
 set termguicolors              " enable True Color (16 million colors)
 set number                     " show line numbers
 set scrolloff=3                " keep 3 lines below and above the cursor when move vertical
@@ -11,12 +14,12 @@ set noshowmode                 " do not show if is in normal, insert, visual, ai
 set laststatus=2               " always show status line, for airline
 set completeopt=menu           " show menu for completion
 set noruler                    " hide line,col from the status line
-"set lazyredraw                 " avoid redraw the screen allways (shown the cursor in the ruler)
+"set lazyredraw                 " avoid redraw the screen allways (possibly issue with column number)
 "set spell                      "turns on spell checking
 set synmaxcol=180              " only higlighted to that column
 set updatetime=100             " time to refresh the gutter signs
 set textwidth=0                " 0 to avoid the text be wraped until write
-let loaded_matchparen = 1      " highlight parenthesis, uncomment to disable
+"let loaded_matchparen = 1      " highlight parenthesis, uncomment to disable
 set shortmess+=c               " suppress message match x of x
 set noshowcmd                  " not show the current typed normal command
 set mouse=a                    " enable mouse in all modes, to copy/paste as usualy in terminal press the shift key
@@ -24,6 +27,9 @@ set mouse=a                    " enable mouse in all modes, to copy/paste as usu
 "set ttimeoutlen=10
 set redrawtime=10000           " avoid disable syntax for large files
 set guicursor=                 " fix for 'q' chars in some terminals
+set colorcolumn=120
+set cursorline
+set signcolumn=yes
 
 " FILE
 set backspace=indent,eol,start " allow delete with backspace
@@ -80,4 +86,6 @@ function! s:NewFile(filename)
 
   execute "edit ".a:filename
 endfunction
+
+let g:colorizer_colornames = 0
 

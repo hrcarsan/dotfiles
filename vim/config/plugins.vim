@@ -92,12 +92,17 @@ Plug '907th/vim-auto-save'
 "   tags come, test better Shougo/echodoc.vim
 " - snippets
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-if !has('nvim') " dependencies needed for deoplete on vim8
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
+"if !has('nvim') " dependencies needed for deoplete on vim8
+  "Plug 'roxma/nvim-yarp'
+  "Plug 'roxma/vim-hug-neovim-rpc'
+"endif
 
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
+Plug 'neoclide/coc-sources'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+let g:coc_global_extensions = ['coc-json', 'coc-tag']
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                       UTILITIES

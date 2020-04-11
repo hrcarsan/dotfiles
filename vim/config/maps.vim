@@ -9,7 +9,14 @@ nnoremap <leader>ve :vsplit $HOME/.config/nvim/.vimrc<cr>
 nnoremap <leader>vs :source $MYVIMRC<cr>:noh<cr>h
 
 " open highlight colors
-nnoremap <leader>hi :execute 'vsplit '.g:easycolor_path<cr>
+function! g:OpenHighlithColors()
+
+  execute 'vsplit '.g:easycolor_path
+  execute 'ColorHighlight'
+
+endfunction
+
+nnoremap <leader>hi :call g:OpenHighlithColors()<cr>
 
 " save a file
 nnoremap <leader>w :silent w<cr>:<c-c>
@@ -36,8 +43,8 @@ vnoremap <leader>n y/<c-r>"<cr>
 nnoremap <leader><space> :noh<cr>
 
 " buffers: previous, next, close
-nnoremap <c-h> :bp<cr>:<c-c>
-nnoremap <c-l> :bn<cr>:<c-c>
+"nnoremap <c-h> :bp<cr>:<c-c>
+"nnoremap <c-l> :bn<cr>:<c-c>
 nnoremap <c-x> :Bd<cr>
 
 " move lines down/up

@@ -1,3 +1,7 @@
+let $FZF_DEFAULT_COMMAND = 'rg --files --smart-case'
+
+let g:fzf_layout = { 'down': '10' }
+
 noremap <c-k> :Buffers<cr>
 "noremap <c-j> :History<cr>
 noremap <c-j> :Files<cr>
