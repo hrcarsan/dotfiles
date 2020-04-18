@@ -1,3 +1,28 @@
 {
-  "suggest.maxCompleteItemCount": 15
+  "suggest.timeout":  10000,
+  "suggest.detailMaxLength": 0,
+  "suggest.maxCompleteItemCount": 20,
+  "diagnostic.errorSign": "",
+  "diagnostic.warningSign": "",
+  "diagnostic.infoSign": "",
+  "diagnostic.hintSign": "",
+  //"suggest.enablePreview": true,
+  //"suggest.maxPreviewWidth": 50,
+  //"suggest.detailMaxLength": 50,
+  "intelephense.files.exclude": [
+     "central_includes_5/aws",
+     "central_includes_5/google_api",
+     "central_includes_5/tcpdf",
+     "central_includes_5/PHPExcel",
+     "webdcs/view_template_custom",
+     "central_includes_5/php-amqplib",
+     "central_includes_5/vendor",
+     "central_includes_5/barcode" ,
+     "webdcs/includes/touch_suite_handler*",
+     "central_includes_5/nusoap"
+  ],
+  //"intelephense.completion.maxItems": 15,
+  //"intelephense.completion.insertUseDeclaration": false,
+  //"intelephense.completion.triggerParameterHints": false,
+ // "intelephense.completion.fullyQualifyGlobalConstantsAndFunctions": true
 }

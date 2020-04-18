@@ -3,10 +3,11 @@ syntax on                      " enable syntax highlight
 filetype plugin on             " enable ftplugin/ load type specific configs
 filetype indent off            " disable autoident
 
+set termguicolors              " enable True Color (16 million colors)
+
 let g:easycolor_path = $HOME."/.config/nvim/plugged/easycolors.vim/colors/light+.json"
 silent! colorscheme easycolors " set the current theme
 
-set termguicolors              " enable True Color (16 million colors)
 set number                     " show line numbers
 set scrolloff=3                " keep 3 lines below and above the cursor when move vertical
 set nowrap                     " does not wrap the line
@@ -30,6 +31,12 @@ set guicursor=                 " fix for 'q' chars in some terminals
 set colorcolumn=120
 set cursorline
 set signcolumn=yes
+set nobackup
+set nowritebackup
+
+" open new split panes to right and below
+set splitright
+set splitbelow
 
 " FILE
 set backspace=indent,eol,start " allow delete with backspace
@@ -88,4 +95,5 @@ function! s:NewFile(filename)
 endfunction
 
 let g:colorizer_colornames = 0
+
 

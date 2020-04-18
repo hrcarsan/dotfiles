@@ -43,8 +43,8 @@ vnoremap <leader>n y/<c-r>"<cr>
 nnoremap <leader><space> :noh<cr>
 
 " buffers: previous, next, close
-"nnoremap <c-h> :bp<cr>:<c-c>
-"nnoremap <c-l> :bn<cr>:<c-c>
+nnoremap <c-h> :bp<cr>:<c-c>
+nnoremap <c-l> :bn<cr>:<c-c>
 nnoremap <c-x> :Bd<cr>
 
 " move lines down/up
@@ -99,6 +99,6 @@ endfunction
 "tnoremap <c-c> <C-\><C-n>
 
 " move down/up in complete panel with tab and shitf + tab
-inoremap <expr><tab>   pumvisible()? "\<c-n>": "\<tab>"
-inoremap <expr><s-tab> pumvisible()? "\<c-p>": "\<s-tab>"
+"inoremap <expr><tab>   pumvisible()? "\<c-n>": "\<tab>"
+"inoremap <expr><s-tab> pumvisible()? "\<c-p>": "\<s-tab>"
 

@@ -17,7 +17,7 @@ Plug 'chrisbra/Colorizer', { 'on': 'ColorHighlight' } " Show hightlighted hex co
 Plug 'google/vim-searchindex' " show the total of the search matches
 Plug 'moll/vim-bbye' " avoid close window when close a buffer
 Plug 'yuttie/comfortable-motion.vim'
-
+Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "               SYNTAX AND LANGUAGES SUPPORT
@@ -35,6 +35,8 @@ Plug 'hail2u/vim-css3-syntax'
 "Plug 'adoy/vim-php-refactoring-toolbox'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'c9s/phpunit.vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -102,7 +104,14 @@ Plug '907th/vim-auto-save'
 Plug 'neoclide/coc-sources'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-let g:coc_global_extensions = ['coc-json', 'coc-tag']
+let g:coc_global_extensions = ['coc-tsserver',
+                             \ 'coc-phpls',
+                             \ 'coc-emmet',
+                             \ 'coc-css',
+                             \ 'coc-html',
+                             \ 'coc-json',
+                             \ 'coc-prettier',
+                             \ 'coc-tag']
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                       UTILITIES

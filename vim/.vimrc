@@ -1,9 +1,3 @@
-  "_________              __  .__
- "/   _____/____    _____/  |_|__|____     ____   ____
- "\_____  \\__  \  /    \   __\  \__  \   / ___\ /  _ \
- "/        \/ __ \|   |  \  | |  |/ __ \_/ /_/  >  <_> )
-"/_______  (____  /___|  /__| |__(____  /\___  / \____/
-        "\/     \/     \/             \//_____/
        ".__                         __
  "___  _|__| _____     ______ _____/  |_ __ ________
  "\  \/ /  |/     \   /  ___// __ \   __\  |  \____ \
@@ -29,6 +23,8 @@ source $HOME/.config/nvim/config/fif.vim
 source $HOME/.config/nvim/config/better_whitespace.vim
 source $HOME/.config/nvim/config/go.vim
 source $HOME/.config/nvim/config/auto_save.vim
+source $HOME/.config/nvim/config/coc.vim
+source $HOME/.config/nvim/config/denite.vim
 
 let g:phpunit_testroot = ''
 let g:phpunit_bin = 'webdcs/tests/run'
