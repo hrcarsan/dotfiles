@@ -5,7 +5,7 @@ filetype indent off            " disable autoident
 
 set termguicolors              " enable True Color (16 million colors)
 
-let g:easycolor_path = $HOME."/.config/nvim/plugged/easycolors.vim/colors/light+.json"
+let g:easycolor_path = $HOME."/.config/nvim/plugged/easycolors.vim/colors/gris.json"
 silent! colorscheme easycolors " set the current theme
 
 set number                     " show line numbers
