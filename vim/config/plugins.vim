@@ -3,21 +3,21 @@ call plug#begin()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                        INTERFACE
 " TODO:
-" - horizontal scroll
-" - check nerdfonts, not all icons are supported with roboto
-"   https://github.com/ryanoasis/nerd-fonts/blob/master/bin/scripts/test-fonts.sh
 " - test 'itchyny/lightline.vim'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'santiagohecar/easycolors.vim' " themes handler
 Plug 'vim-airline/vim-airline'
-Plug 'ryanoasis/vim-devicons'
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'yggdroot/indentline'
 Plug 'chrisbra/Colorizer', { 'on': 'ColorHighlight' } " Show hightlighted hex colors
 Plug 'google/vim-searchindex' " show the total of the search matches
 Plug 'moll/vim-bbye' " avoid close window when close a buffer
 Plug 'yuttie/comfortable-motion.vim'
+Plug 'ryanoasis/vim-devicons'
 Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'kristijanhusak/defx-icons'
+"Plug 'morhetz/gruvbox'
+Plug 'majutsushi/tagbar'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "               SYNTAX AND LANGUAGES SUPPORT
@@ -26,7 +26,8 @@ Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 " - support hightlight php and js inside html
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'StanAngeloff/php.vim',    {'for': 'php'}
+"Plug 'StanAngeloff/php.vim',    {'for': 'php'}
+Plug 'santiagohecar/php.vim',    {'for': 'php'}
 Plug 'elzr/vim-json',           {'for': 'json'}
 Plug 'pangloss/vim-javascript', {'for': 'javascript'}
 Plug 'HerringtonDarkholme/yats.vim', {'for': 'typescript'}
@@ -80,7 +81,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'godlygeek/tabular',       {'on': 'Tabularize'}
 Plug 'valloric/matchtagalways', {'for': 'html'}
 Plug 'alvan/vim-closetag',      {'for': 'html'}
-Plug '907th/vim-auto-save'
+"Plug '907th/vim-auto-save'
 "Plug 'mattn/emmet-vim'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -120,6 +121,7 @@ let g:coc_global_extensions = ['coc-tsserver',
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'danro/rename.vim' , { 'on': 'Rename' }
 "Plug 'thaerkh/vim-workspace'
+
 
 call plug#end()
 
