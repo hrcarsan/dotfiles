@@ -5,7 +5,7 @@ filetype indent off            " disable autoident
 
 set termguicolors              " enable True Color (16 million colors)
 
-let g:easycolor_path = $HOME."/.config/nvim/plugged/easycolors.vim/colors/gris.json"
+let g:easycolor_path = $HOME."/.config/nvim/plugged/easycolors.vim/colors/pro-light.json"
 silent! colorscheme easycolors " set the current theme
 
 "colorscheme gruvbox
@@ -22,7 +22,7 @@ set lazyredraw                 " avoid redraw the screen allways (possibly issue
 set synmaxcol=150              " only higlighted to that column
 set updatetime=100             " time to refresh the gutter signs
 set textwidth=0                " 0 to avoid the text be wraped until write
-let loaded_matchparen = 1      " highlight parenthesis, uncomment to disable
+"let loaded_matchparen = 1      " highlight parenthesis, uncomment to disable
 set shortmess+=c               " suppress message match x of x
 set noshowcmd                  " not show the current typed normal command
 set mouse=a                    " enable mouse in all modes, to copy/paste as usualy in terminal press the shift key
