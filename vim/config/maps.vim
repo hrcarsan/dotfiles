@@ -10,10 +10,8 @@ nnoremap <leader>vs :source $MYVIMRC<cr>:noh<cr>h
 
 " open highlight colors
 function! g:OpenHighlithColors()
-
   execute 'vsplit '.g:easycolor_path
   execute 'ColorHighlight'
-
 endfunction
 
 nnoremap <leader>hi :call g:OpenHighlithColors()<cr>
@@ -27,7 +25,7 @@ nnoremap <leader>q :qa<cr>
 " <c-]> is the default vim map go to definition
 nnoremap gd <c-]>
 
-nnoremap Y y$
+"nnoremap Y y$
 
 " add \v (magic regex) to do normal regex searchs
 "nnoremap / /\v
@@ -51,16 +49,21 @@ nnoremap <c-x> :Bd<cr>
 nnoremap - :m .+1<cr>==
 nnoremap _ :m .-2<cr>==
 
-" enclosed width "quotes"
+" enclosed with "quotes"
 nmap <leader>" ysiw"
 nmap <leader>' ysiw'
 vmap <leader>" S"
 vmap <leader>' S'
 
+" enclosed with [brackets]
 nmap <leader>[ ysiw]
 nmap <leader>{ ysiw}
 nmap <leader>( ysiw)
+vmap <leader>[ S]
+vmap <leader>{ S}
+vmap <leader>( S)
 
+" remove \r
 nnoremap <leader>fc :%s/\r//g<cr>
 
 " return to normal mode
@@ -70,29 +73,27 @@ nnoremap <c-c> <c-c>:<c-c>
 " cut/copy/paste to/from clipboard
 vnor <c-x> "+x
 vnor <c-y> "+y
-inor <c-v> <C-O>:set paste<CR><C-R>+<C-O>:set nopaste<CR>
-vnor <c-v> :<C-U>set paste<CR>gvc<C-R>+<C-O>:set nopaste<CR><ESC>
+"inor <c-v> <C-O>:set paste<CR><C-R>+<C-O>:set nopaste<CR>
+"vnor <c-v> :<C-U>set paste<CR>gvc<C-R>+<C-O>:set nopaste<CR><ESC>
 
+" copy the name of current flight to clipboard
 nmap ,fn :let @+=expand("%:t")<CR>
 
 " save workspace
 "nnoremap <leader>tw :ToggleWorkspace<CR>
 
-nnoremap <leader>c :GitGutterToggle<cr>
+"nnoremap <leader>c :GitGutterToggle<cr>
 nnoremap <leader>z Vi{zfkj
 
 " Show hi group under cursor
 map <leader>hs :call ShowHi()<cr>
 
-
 function! ShowHi()
-
   let hi    = synIDattr(synID(line('.'), col('.'), 1), 'name')
   let trans = synIDattr(synID(line('.'), col('.'), 0), 'name')
   let lo    = synIDattr(synIDtrans(synID(line('.'), col('.'), 1)), 'name')
 
   echo 'hi<'.hi.'> trans<'.trans.'> lo<'.lo.'>'
-
 endfunction
 
 "tnoremap <Esc> <C-\><C-n>

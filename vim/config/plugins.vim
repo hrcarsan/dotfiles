@@ -2,8 +2,6 @@ call plug#begin()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                        INTERFACE
-" TODO:
-" - test 'itchyny/lightline.vim'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'santiagohecar/easycolors.vim' " themes handler
 Plug 'vim-airline/vim-airline'
@@ -17,7 +15,9 @@ Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'kristijanhusak/defx-icons'
 "Plug 'morhetz/gruvbox'
-Plug 'majutsushi/tagbar'
+"Plug 'majutsushi/tagbar'
+
+Plug 'santiagohecar/vista.vim'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "               SYNTAX AND LANGUAGES SUPPORT
@@ -81,7 +81,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'godlygeek/tabular',       {'on': 'Tabularize'}
 Plug 'valloric/matchtagalways', {'for': 'html'}
 Plug 'alvan/vim-closetag',      {'for': 'html'}
-"Plug '907th/vim-auto-save'
+Plug '907th/vim-auto-save'
 "Plug 'mattn/emmet-vim'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

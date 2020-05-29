@@ -21,7 +21,7 @@
      "central_includes_5/barcode" ,
      "webdcs/includes/touch_suite_handler*",
      "central_includes_5/nusoap"
-  ],
+  ]
   //"intelephense.completion.maxItems": 15,
   //"intelephense.completion.insertUseDeclaration": false,
   //"intelephense.completion.triggerParameterHints": false,

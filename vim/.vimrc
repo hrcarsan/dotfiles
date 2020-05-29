@@ -21,37 +21,14 @@ source $HOME/.config/nvim/config/comfortable_motion.vim
 source $HOME/.config/nvim/config/fif.vim
 source $HOME/.config/nvim/config/better_whitespace.vim
 source $HOME/.config/nvim/config/go.vim
-"source $HOME/.config/nvim/config/auto_save.vim
+source $HOME/.config/nvim/config/auto_save.vim
 source $HOME/.config/nvim/config/coc.vim
 source $HOME/.config/nvim/config/denite.vim
-source $HOME/.config/nvim/config/defx.vim
-
-let g:tagbar_sort = 0
-let g:tagbar_silent = 1
-let g:tagbar_compact=1
-
+source $HOME/.config/nvim/config/sidebar.vim
+source $HOME/.config/nvim/config/vista.vim
 
 let g:phpunit_testroot = ''
 let g:phpunit_bin = 'webdcs/tests/run'
-
-let g:tagbar_type_typescript = {
-  \ 'ctagsbin' : 'tstags',
-  \ 'ctagsargs' : '-f-',
-  \ 'kinds': [
-    \ 'e:enums:0:1',
-    \ 'f:function:0:1',
-    \ 't:typealias:0:1',
-    \ 'M:Module:0:1',
-    \ 'I:import:0:1',
-    \ 'i:interface:0:1',
-    \ 'C:class:0:1',
-    \ 'm:method:0:1',
-    \ 'p:property:0:1',
-    \ 'v:variable:0:1',
-    \ 'c:const:0:1',
-  \ ],
-  \ 'sort' : 0
-\ }
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                           BASICS
@@ -138,4 +115,3 @@ let g:tagbar_type_typescript = {
 "                           UTILITIES
 "
 " :Rename {name}  Rename the current file
-

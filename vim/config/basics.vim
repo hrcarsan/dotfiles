@@ -3,7 +3,9 @@ syntax on                      " enable syntax highlight
 filetype plugin on             " enable ftplugin/ load type specific configs
 filetype indent off            " disable autoident
 
-set termguicolors              " enable True Color (16 million colors)
+let &t_8f="\<Esc>[38;2;%lu;%lu;%lum" " italic support in tmux
+let &t_8b="\<Esc>[48;2;%lu;%lu;%lum" " italic support in tmux
+set termguicolors                    " enable True Color (16 million colors)
 
 let g:easycolor_path = $HOME."/.config/nvim/plugged/easycolors.vim/colors/pro-light.json"
 silent! colorscheme easycolors " set the current theme
@@ -22,7 +24,7 @@ set lazyredraw                 " avoid redraw the screen allways (possibly issue
 set synmaxcol=150              " only higlighted to that column
 set updatetime=100             " time to refresh the gutter signs
 set textwidth=0                " 0 to avoid the text be wraped until write
-"let loaded_matchparen = 1      " highlight parenthesis, uncomment to disable
+let loaded_matchparen = 1      " highlight parenthesis, uncomment to disable
 set shortmess+=c               " suppress message match x of x
 set noshowcmd                  " not show the current typed normal command
 set mouse=a                    " enable mouse in all modes, to copy/paste as usualy in terminal press the shift key
@@ -30,14 +32,14 @@ set mouse=a                    " enable mouse in all modes, to copy/paste as usu
 "set ttimeoutlen=10
 set redrawtime=10000           " avoid disable syntax for large files
 set guicursor=                 " fix for 'q' chars in some terminals
-set colorcolumn=120
+set colorcolumn=110
 "set cursorline                 " could made slow the scrolling?
 set signcolumn=yes
 set nobackup
 set nowritebackup
 
 " open new split panes to right and below
-set splitright
+"set splitright
 set splitbelow
 
 " turn terminal to normal mode with escape
@@ -75,8 +77,9 @@ set softtabstop=2              " set the indent with to two spaces
 set expandtab                  " use spaces instead of tabs
 
 " FOLD
-set foldcolumn=0               " hide fold column
+"set foldcolumn=0               " hide fold column
 set foldtext=""                " do not show first line of the folded text
+set fillchars=eob:.
 
 " OTHERS
 let g:netrw_dirhistmax=0       " disable netrw history
