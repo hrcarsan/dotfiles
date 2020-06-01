@@ -7,10 +7,8 @@ let &t_8f="\<Esc>[38;2;%lu;%lu;%lum" " italic support in tmux
 let &t_8b="\<Esc>[48;2;%lu;%lu;%lum" " italic support in tmux
 set termguicolors                    " enable True Color (16 million colors)
 
-let g:easycolor_path = $HOME."/.config/nvim/plugged/easycolors.vim/colors/pro-light.json"
+let g:easycolor_path = $HOME."/.config/nvim/colors/pro-light.json"
 silent! colorscheme easycolors " set the current theme
-
-"colorscheme gruvbox
 
 set number                     " show line numbers
 set scrolloff=3                " keep 3 lines below and above the cursor when move vertical
@@ -43,15 +41,15 @@ set nowritebackup
 set splitbelow
 
 " turn terminal to normal mode with escape
-tnoremap <c-c> <C-\><C-n>
+"tnoremap <c-c> <C-\><C-n>
 " start terminal in insert mode
-au BufEnter * if &buftype == 'terminal' | :startinsert | endif
+"au BufEnter * if &buftype == 'terminal' | :startinsert | endif
 " open terminal on ctrl+n
-function! OpenTerminal()
-  split term://bash
-  resize 10
-endfunction
-nnoremap <c-t> :call OpenTerminal()<CR>
+"function! OpenTerminal()
+  "split term://bash
+  "resize 10
+"endfunction
+"nnoremap <c-t> :call OpenTerminal()<CR>
 
 " FILE
 set backspace=indent,eol,start " allow delete with backspace

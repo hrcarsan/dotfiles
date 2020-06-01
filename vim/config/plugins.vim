@@ -11,12 +11,9 @@ Plug 'google/vim-searchindex' " show the total of the search matches
 Plug 'moll/vim-bbye' " avoid close window when close a buffer
 Plug 'yuttie/comfortable-motion.vim'
 Plug 'ryanoasis/vim-devicons'
-Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
+"Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'kristijanhusak/defx-icons'
-"Plug 'morhetz/gruvbox'
-"Plug 'majutsushi/tagbar'
-
 Plug 'santiagohecar/vista.vim'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -52,10 +49,12 @@ Plug 'w0rp/ale'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                             SEARCH
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'      " fuzzy finder for files, tags, etc...
+"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+"Plug 'junegunn/fzf.vim'      " fuzzy finder for files, tags, etc...
 Plug 'santiagohecar/fif.vim' " Find in Files
 
+Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!'}
+Plug 'santiagohecar/coc-clap'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                         GIT
@@ -66,11 +65,9 @@ Plug 'santiagohecar/fif.vim' " Find in Files
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                         EDITION
 " TODO:
-" - there are something better than nerdcommenter?
 " - study emmet
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'scrooloose/nerdcommenter'
@@ -104,15 +101,6 @@ Plug '907th/vim-auto-save'
 
 Plug 'neoclide/coc-sources'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-let g:coc_global_extensions = ['coc-tsserver',
-                             \ 'coc-phpls',
-                             \ 'coc-emmet',
-                             \ 'coc-css',
-                             \ 'coc-html',
-                             \ 'coc-json',
-                             \ 'coc-prettier',
-                             \ 'coc-tag']
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                       UTILITIES

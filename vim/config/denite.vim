@@ -1,24 +1,42 @@
-" ag
-"call denite#custom#var('file/rec', 'command',
-	"\ ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
-
-	"call denite#custom#var('grep', {
-		"\ 'command': ['ag'],
-		"\ 'default_opts': ['-i', '--vimgrep'],
-		"\ 'recursive_opts': [],
-		"\ 'pattern_opt': [],
-		"\ 'separator': ['--'],
-		"\ 'final_opts': [],
-		"\ })
-
-" ripgrep
-call denite#custom#var('file/rec', 'command', ['rg', '--files', '--glob', '!.git'])
-call denite#custom#var('grep', 'command', ['rg'])
-call denite#custom#var('grep', 'default_opts', ['--hidden', '--vimgrep', '--heading', '-S'])
+call denite#custom#var('file/rec', 'command', ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
+call denite#custom#option('default', 'prompt', 'λ')
+call denite#custom#var('grep', 'command', ['ag'])
+call denite#custom#var('grep', 'default_opts', ['-i', '--vimgrep'])
 call denite#custom#var('grep', 'recursive_opts', [])
-call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
+call denite#custom#var('grep', 'pattern_opt', [])
 call denite#custom#var('grep', 'separator', ['--'])
 call denite#custom#var('grep', 'final_opts', [])
+call denite#custom#source('file_rec', 'sorters', ['sorter_sublime'])
+call denite#custom#filter('matcher_ignore_globs', 'ignore_globs',
+      \ [ '.git/', '.ropeproject/', '__pycache__/*', '*.pyc', 'node_modules/',
+      \   'venv/', 'images/', '*.min.*', 'img/', 'fonts/', '*.png'])
+
+"nmap <LEADER>p :Denite -start-filter file/rec<CR>
+"nmap <LEADER>b :Denite buffer<CR>
+
+
+
+" ag
+"call denite#custom#var('file/rec', 'command',
+  "\ ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
+
+  "call denite#custom#var('grep', {
+    "\ 'command': ['ag'],
+    "\ 'default_opts': ['-i', '--vimgrep'],
+    "\ 'recursive_opts': [],
+    "\ 'pattern_opt': [],
+    "\ 'separator': ['--'],
+    "\ 'final_opts': [],
+    "\ })
+
+" ripgrep
+"call denite#custom#var('file/rec', 'command', ['rg', '--files', '--glob', '!.git'])
+"call denite#custom#var('grep', 'command', ['rg'])
+"call denite#custom#var('grep', 'default_opts', ['--hidden', '--vimgrep', '--heading', '-S'])
+"call denite#custom#var('grep', 'recursive_opts', [])
+"call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
+"call denite#custom#var('grep', 'separator', ['--'])
+"call denite#custom#var('grep', 'final_opts', [])
 
 	"call denite#custom#var('grep', {
 		"\ 'command': ['rg'])
@@ -32,15 +50,6 @@ call denite#custom#var('grep', 'final_opts', [])
 " Remove date from buffer list
 call denite#custom#var('buffer', 'date_format', '')
 
-" Custom options for Denite
-"   auto_resize             - Auto resize the Denite window height automatically.
-"   prompt                  - Customize denite prompt
-"   direction               - Specify Denite window direction as directly below current pane
-"   winminheight            - Specify min height for Denite window
-"   highlight_mode_insert   - Specify h1-CursorLine in insert mode
-"   prompt_highlight        - Specify color of prompt
-"   highlight_matched_char  - Matched characters highlight
-"   highlight_matched_range - matched range highlight
 let s:denite_options = {'default' : {
 \ 'split': 'floating',
 \ 'start_filter': 1,
@@ -70,22 +79,11 @@ endfunction
 
 call s:profile(s:denite_options)
 
-"set winbl=10
-
 
 " === Denite shorcuts === "
-"   ;         - Browser currently open buffers
-"   <leader>t - Browse list of files in current directory
-"   <leader>g - Search current directory for occurences of given term and close window if no results
-"   <leader>j - Search current directory for occurences of word under cursor
-"
 nmap <c-k> :Denite buffer<CR><space>
 nmap <c-j> :DeniteProjectDir file/rec<CR><space>
 nnoremap <leader>t :Denite outline<CR><space>
-"nnoremap <leader>T :Denite tag<CR>
-
-nnoremap <leader>g :<C-u>Denite grep:. -no-empty<CR>
-nnoremap <leader>j :<C-u>DeniteCursorWord grep:.<CR>
 
 " Define mappings while in 'filter' mode
 autocmd FileType denite-filter call s:denite_filter_my_settings()
@@ -93,7 +91,6 @@ autocmd FileType denite-filter call s:denite_filter_my_settings()
 function! s:denite_filter_my_settings() abort
 
   imap <silent><buffer> <tab> <Plug>(denite_filter_quit)
-  "imap <silent><buffer> <C-j> <Plug>(denite_filter_quit)
   inoremap <silent><buffer><expr> <CR> denite#do_map('do_action')
   inoremap <silent><buffer><expr> <c-c> denite#do_map('quit')
   nnoremap <silent><buffer><expr> <c-c> denite#do_map('quit')
@@ -111,7 +108,6 @@ autocmd FileType denite call s:denite_my_settings()
 function! s:denite_my_settings() abort
 
   nmap <silent><buffer> <tab> j
-  "nmap <silent><buffer> <s-tab> k
   nnoremap <silent><buffer><expr> <CR> denite#do_map('do_action')
   inoremap <silent><buffer><expr> <c-c> denite#do_map('quit')
   nnoremap <silent><buffer><expr> <c-c> denite#do_map('quit')

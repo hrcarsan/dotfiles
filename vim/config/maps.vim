@@ -23,7 +23,7 @@ nnoremap <leader>w :silent w<cr>:<c-c>
 nnoremap <leader>q :qa<cr>
 
 " <c-]> is the default vim map go to definition
-nnoremap gd <c-]>
+nnoremap gD <c-]>
 
 "nnoremap Y y$
 
