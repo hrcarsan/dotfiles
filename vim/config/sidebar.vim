@@ -35,10 +35,16 @@ function! sidebar#open() abort
     return
   endif
 
+  if !g:sb_editor_win_id
+    call sidebar#init()
+    return
+  endif
+
   Defx
   let g:sb_files_win_id = win_getid()
 
   split __vista__
+  setlocal nobuflisted
   let g:sb_outline_win_id = win_getid()
 
   call sidebar#goto_editor_win()
