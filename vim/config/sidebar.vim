@@ -3,8 +3,11 @@ nnoremap <c-c> :call CtrlC()<cr>
 nnoremap <c-s> :call sidebar#toggle()<cr>
 nnoremap <c-f> :call sidebar#goto_files_win()<cr>
 nnoremap <c-t> :call sidebar#goto_outline_win()<CR>
+nnoremap <c-u> :call sidebar#goto_phpunit_win()<CR>
 nnoremap <leader>gd :call sidebar#open_git_diff()<cr>
 nnoremap <leader>gs :call sidebar#open_git()<cr>
+nnoremap <leader>uf :call sidebar#open_phpunit(0)<cr>
+nnoremap <leader>ua :call sidebar#open_phpunit(1)<cr>
 
 " sidebar
 autocmd! VimEnter * call sidebar#init()
@@ -13,10 +16,12 @@ let g:sb_editor_win_id = 0
 let g:sb_files_win_id = 0
 let g:sb_outline_win_id = 0
 let g:sb_git_win_id = 0
+let g:sb_phpunit_win_id = 0
 
 let g:sb_open = 0
 let g:sb_git_open = 0
 let g:sb_git_diff_open = 0
+let g:sb_phpunit_open = 0
 
 
 function! sidebar#init() abort
@@ -58,7 +63,12 @@ endfunction
 
 function! sidebar#resize() abort
   let l:cur_win_id = win_getid()
-  let l:height     = winheight(g:sb_editor_win_id)/(g:sb_git_open == 1? 3: 2)
+  let l:win_number = 2
+
+  if g:sb_git_open == 1     | let l:win_number = l:win_number + 1 |  endif
+  if g:sb_phpunit_open == 1 | let l:win_number = l:win_number + 1 |  endif
+
+  let l:height     = winheight(g:sb_editor_win_id)/l:win_number
 
   call sidebar#goto_files_win()
   exe "resize ".l:height
@@ -79,6 +89,12 @@ function! sidebar#close() abort
   exe "normal \<c-w>o"
   let g:sb_open = 0
   let g:sb_git_open = 0
+  let g:sb_phpunit_open = 0
+endfunction
+
+
+function! sidebar#resize_width() abort
+  vertical resize 125
 endfunction
 
 
@@ -112,6 +128,11 @@ function! sidebar#goto_git_win() abort
 endfunction
 
 
+function! sidebar#goto_phpunit_win() abort
+  call win_gotoid(g:sb_phpunit_win_id)
+endfunction
+
+
 function! sidebar#open_git() abort
   if g:sb_git_open
     call sidebar#close_git()
@@ -123,10 +144,11 @@ function! sidebar#open_git() abort
   setlocal nobuflisted
   setlocal signcolumn=no
   setlocal nonumber
+  setlocal nornu
 
   call sidebar#goto_editor_win()
   exe "normal \<c-w>H"
-  vertical resize 130
+  call sidebar#resize_width()
   call sidebar#goto_git_win()
 	call timer_start(100, {timer-> sidebar#resize()})
 endfunction
@@ -181,6 +203,46 @@ function! CtrlC() abort
 endfunction
 
 
+function! sidebar#open_phpunit(run_all) abort
+
+  if a:run_all == 1
+    PHPUnitRunAll
+  else
+    PHPUnitRunCurrentFile
+  endif
+
+  if g:sb_phpunit_open
+    "call sidebar#close_phpunit()
+    return
+  endif
+
+  "PHPUnitRunCurrentFile
+  exe "normal \<c-w>l"
+  let g:sb_phpunit_win_id = win_getid()
+  let g:sb_phpunit_open = 1
+  setlocal nobuflisted
+  setlocal signcolumn=no
+  setlocal nonumber
+  setlocal nornu
+  exe "normal \<c-w>J"
+
+  call sidebar#goto_editor_win()
+  exe "normal \<c-w>H"
+  call sidebar#resize_width()
+  call timer_start(100, {timer-> sidebar#resize()})
+endfunction
+
+
+function! sidebar#close_phpunit() abort
+  if !g:sb_phpunit_open
+    return
+  endif
+
+  exe "close ".g:sb_phpunit_win_id
+  let g:sb_phpunit_open = 0
+endfunction
+
+
 
 
 
@@ -199,7 +261,7 @@ endfunction
 
 " Set appearance
 call defx#custom#option('_', {
-      \ 'winwidth': 39,
+      \ 'winwidth': 44,
       \ 'split': 'vertical',
       \ 'direction': 'botright',
       \ 'show_ignored_files': 0,

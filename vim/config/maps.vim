@@ -16,6 +16,8 @@ endfunction
 
 nnoremap <leader>hi :call g:OpenHighlithColors()<cr>
 
+nnoremap <leader>rn :set rnu!<cr>
+
 " save a file
 nnoremap <leader>w :silent w<cr>:<c-c>
 

@@ -29,7 +29,7 @@ source $HOME/.config/nvim/config/vista.vim
 source $HOME/.config/nvim/config/clap.vim
 
 let g:phpunit_testroot = ''
-let g:phpunit_bin = 'webdcs/tests/run'
+"let g:phpunit_bin = 'webdcs/tests/run'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                           BASICS

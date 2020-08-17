@@ -181,11 +181,11 @@
       "EndOfBuffer":      {"fg": "White", "bg": "White", "hint": "Set with the same background color"},
 
       "LineNr":           {"fg": "Grey", "bg": "White", "opt": "bold","hint": "Line number"},
-      "CursorLineNr":     {"fg": "Grey", "bg":  "LightGrey", "opt": "italic"},
+      "CursorLineNr":     {"fg": "DarkGrey", "bg":  "LightGrey", "opt": "bold"},
 
       "CursorColumn":       {"bg":  "GrayishYellow"},
       "CursorLine":       {"bg":  "LightGrey"},
-      "IncSearch":        {"bg":  "LightGrey2"},
+      "IncSearch":        {"bg":  "LightGrey"},
       "ColorColumn":      {"bg": "GrayishYellow"},
 
       "_TagbarHighlight":  {"bg":  "LightGrey2"},

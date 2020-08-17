@@ -31,7 +31,8 @@ set mouse=a                    " enable mouse in all modes, to copy/paste as usu
 set redrawtime=10000           " avoid disable syntax for large files
 set guicursor=                 " fix for 'q' chars in some terminals
 set colorcolumn=110
-"set cursorline                 " could made slow the scrolling?
+set cursorline                 " could made slow the scrolling?
+set rnu                        " relative numbers
 set signcolumn=yes
 set nobackup
 set nowritebackup

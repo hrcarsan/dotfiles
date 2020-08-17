@@ -27,7 +27,7 @@ let g:airline_skip_empty_sections              = 1
 let g:airline_section_c                        = '%#__accent_red#%{airline#util#wrap(airline#parts#readonly(),0)}%#__restore__#'
 let g:airline_section_y                        = ''
 "let g:airline_section_z                        = '%L Line(s) %{g:airline_symbols.linenr} Column %3v '
-let g:airline_section_z                        = 'ln %l/%L %{g:airline_symbols.linenr}col %v '
+let g:airline_section_z                        = 'line %l/%L %{g:airline_symbols.linenr}col %v '
 let g:airline#parts#ffenc#skip_expected_string = 'utf-8[unix]'
 let g:airline#extensions#wordcount#enabled     = 0
 let g:airline#extensions#tagbar#enabled        = 0
@@ -46,5 +46,6 @@ let g:airline_filetype_overrides = {
     \ 'defx':  [' Files', '%{b:defx.paths[0]}'],
     \ 'vista':  [' Outline', ''],
     \ 'fugitive':  [' Git', ''],
+    \ 'phpunit':  [' Unit test', ''],
 \ }
 
