@@ -3,11 +3,11 @@ nnoremap <c-c> :call CtrlC()<cr>
 nnoremap <c-s> :call sidebar#toggle()<cr>
 nnoremap <c-f> :call sidebar#goto_files_win()<cr>
 nnoremap <c-t> :call sidebar#goto_outline_win()<CR>
-nnoremap <c-u> :call sidebar#goto_phpunit_win()<CR>
+"nnoremap <c-u> :call sidebar#goto_phpunit_win()<CR>
 nnoremap <leader>gd :call sidebar#open_git_diff()<cr>
 nnoremap <leader>gs :call sidebar#open_git()<cr>
-nnoremap <leader>uf :call sidebar#open_phpunit(0)<cr>
-nnoremap <leader>ua :call sidebar#open_phpunit(1)<cr>
+"nnoremap <leader>uf :call sidebar#open_phpunit(0)<cr>
+"nnoremap <leader>ua :call sidebar#open_phpunit(1)<cr>
 
 " sidebar
 autocmd! VimEnter * call sidebar#init()
@@ -55,7 +55,9 @@ function! sidebar#open() abort
   call sidebar#goto_editor_win()
   Vista
 
+  call sidebar#goto_files_win()
 	call timer_start(100, {timer-> sidebar#resize()})
+  call timer_start(100, {timer-> sidebar#goto_editor_win()})
 
   let g:sb_open = 1
 endfunction
@@ -224,6 +226,7 @@ function! sidebar#open_phpunit(run_all) abort
   setlocal signcolumn=no
   setlocal nonumber
   setlocal nornu
+  set wrap
   exe "normal \<c-w>J"
 
   call sidebar#goto_editor_win()

@@ -10,8 +10,6 @@ source $HOME/.config/nvim/config/basics.vim
 source $HOME/.config/nvim/config/maps.vim
 source $HOME/.config/nvim/config/airline.vim
 source $HOME/.config/nvim/config/indentline.vim
-"source $HOME/.config/nvim/config/fzf.vim
-"source $HOME/.config/nvim/config/deoplete.vim
 source $HOME/.config/nvim/config/ale.vim
 source $HOME/.config/nvim/config/ctags.vim
 source $HOME/.config/nvim/config/git.vim
@@ -23,13 +21,10 @@ source $HOME/.config/nvim/config/better_whitespace.vim
 source $HOME/.config/nvim/config/go.vim
 source $HOME/.config/nvim/config/auto_save.vim
 source $HOME/.config/nvim/config/coc.vim
-"source $HOME/.config/nvim/config/denite.vim
 source $HOME/.config/nvim/config/sidebar.vim
 source $HOME/.config/nvim/config/vista.vim
 source $HOME/.config/nvim/config/clap.vim
-
-let g:phpunit_testroot = ''
-"let g:phpunit_bin = 'webdcs/tests/run'
+source $HOME/.config/nvim/config/test.vim
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                           BASICS

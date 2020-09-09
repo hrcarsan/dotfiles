@@ -185,7 +185,7 @@
 
       "CursorColumn":       {"bg":  "GrayishYellow"},
       "CursorLine":       {"bg":  "LightGrey"},
-      "IncSearch":        {"bg":  "LightGrey"},
+      "IncSearch":        {"bg":  "LightGrey2"},
       "ColorColumn":      {"bg": "GrayishYellow"},
 
       "_TagbarHighlight":  {"bg":  "LightGrey2"},

@@ -1,5 +1,5 @@
-nmap <c-k> :Clap buffers<CR>
-nmap <c-j> :Clap!! files<CR>
+nmap <silent> <c-k> :Clap buffers<CR>
+nmap <silent> <c-j> :Clap!! files<CR>
 
 let g:clap_layout = {'relative': 'window', 'width': '76%', 'height': '33%', 'row': '5%', 'col': '12%'}
 let g:clap_search_box_border_style = 'nil'

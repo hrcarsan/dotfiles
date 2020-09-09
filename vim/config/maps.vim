@@ -36,8 +36,23 @@ nnoremap gD <c-]>
 "vnoremap ? ?\v
 
 " highlight the word under cursor
-nnoremap <leader>n *N
-vnoremap <leader>n y/<c-r>"<cr>
+"function! g:SearchIndex()
+  "execute "SearchIndex"
+"endfunction
+
+"function! g:HightlightWordUnder()
+  "let actualView = winsaveview()
+  "call feedkeys('*')
+  "call timer_start(0, {timer-> winrestview(actualView)})
+  "call timer_start(10, {timer-> g:SearchIndex()})
+"endfunction
+
+nnoremap <silent><expr> * v:count ? '*'
+      \ : ':execute "keepjumps normal! *" <Bar> call winrestview(' . string(winsaveview()) . ')<CR>'
+nnoremap <leader>n :execute "normal *"<cr>:SearchIndex<cr>
+
+"nnoremap <silent> <leader>n :call g:HightlightWordUnder()<cr>
+"vnoremap <leader>n y/<c-r>"<cr>
 
 " remove search higlight
 nnoremap <leader><space> :noh<cr>
@@ -66,7 +81,7 @@ vmap <leader>{ S}
 vmap <leader>( S)
 
 " remove \r
-nnoremap <leader>fc :%s/\r//g<cr>
+nnoremap <leader>rr :%s/\r//g<cr>
 
 " return to normal mode
 inoremap <c-c> <esc>
@@ -78,8 +93,8 @@ vnor <c-y> "+y
 "inor <c-v> <C-O>:set paste<CR><C-R>+<C-O>:set nopaste<CR>
 "vnor <c-v> :<C-U>set paste<CR>gvc<C-R>+<C-O>:set nopaste<CR><ESC>
 
-" copy the name of current flight to clipboard
-nmap ,fn :let @+=expand("%:t")<CR>
+" copy the name of current file to clipboard
+nmap <c-n> :let @+=expand("%:t")<CR>
 
 " save workspace
 "nnoremap <leader>tw :ToggleWorkspace<CR>
@@ -98,7 +113,9 @@ function! ShowHi()
   echo 'hi<'.hi.'> trans<'.trans.'> lo<'.lo.'>'
 endfunction
 
-"tnoremap <Esc> <C-\><C-n>
+nmap <leader>tt :FloatermNew<cr>
+
+tnoremap <Esc> <C-\><C-n>
 "tnoremap <c-c> <C-\><C-n>
 
 " move down/up in complete panel with tab and shitf + tab

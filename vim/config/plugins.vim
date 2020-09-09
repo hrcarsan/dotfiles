@@ -15,6 +15,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'kristijanhusak/defx-icons'
 Plug 'santiagohecar/vista.vim'
+Plug 'voldikss/vim-floaterm'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "               SYNTAX AND LANGUAGES SUPPORT
@@ -32,9 +33,10 @@ Plug 'othree/html5.vim'
 Plug 'hail2u/vim-css3-syntax'
 "Plug 'adoy/vim-php-refactoring-toolbox'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'c9s/phpunit.vim'
+"Plug 'c9s/phpunit.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
+Plug 'vim-test/vim-test'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

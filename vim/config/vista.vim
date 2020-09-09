@@ -1,4 +1,12 @@
+nmap <leader>ot :Vista ctags<cr>
+nmap <leader>oc :Vista coc<cr>
+
 let g:vista_default_executive = 'ctags'
+
+"let g:vista_executive_for = {
+    "\ 'typescript': 'coc',
+    "\ }
+
 let g:vista_echo_cursor = 0
 let g:vista_disable_statusline = 1
 let g:airline#extensions#vista#enabled = 0
