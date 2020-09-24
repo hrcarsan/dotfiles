@@ -37,6 +37,11 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'no_path'
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '⎸'
+"let g:airline#extensions#tabline#show_close_button = 0
+"let g:airline#extensions#tabline#show_splits = 0
+"let g:airline#extensions#tabline#show_buffers = 0
+"let g:airline#extensions#tabline#show_tab_nr = 0
+"let g:airline#extensions#tabline#show_tab_count = 0
 
 let g:airline_symbols = {'space': ' ', 'paste': 'PASTE', 'maxlinenr': ' ', 'dirty': '', 'crypt': '🔒',
                         \'linenr': '☰ ', 'readonly': '', 'spell': 'SPELL', 'modified': '*',
@@ -47,5 +52,5 @@ let g:airline_filetype_overrides = {
     \ 'vista':  [' Outline', ''],
     \ 'fugitive':  [' Git', ''],
     \ 'phpunit':  [' Unit test', ''],
+    \ 'startify':  ['', ''],
 \ }
-

@@ -339,12 +339,14 @@
       "typescriptDecorator":                 {"fg":   "OxfordBlue"},
       "typescriptBlock":                     {"fg":   "Brown"},
       "typescriptMathStaticMethod":          {"fg":   "Brown"},
+      "typescriptStringMethod":              {"fg":   "Brown"},
       "typescriptMember":                    {"fg":   "Ginger"},
       "typescriptPredefinedType":            {"fg":   "DarkMagenta"},
       "typescriptBrowserObjects":            {"fg":   "DarkOrange"},
       "typescriptDOMObjects":                {"fg":   "DarkOrange"},
       "typescriptGlobalObjects":             {"fg":   "DarkOrange"},
       "typescriptClassName":                 {"fg":   "DarkMagenta"},
+      "typescriptClassHeritage":             {"fg":   "DarkMagenta"},
       "typescriptMemberVariableDeclaration": {"fg":   "HonoluluBlue"},
       "typescriptVariableDeclaration":       {"fg":   "DarkGreen"},
       "typescriptObjectLiteral":             {"fg":   "DarkGreen"},
@@ -363,9 +365,14 @@
       "typescriptOpSymbols":                 {"fg":   "Maroon"},
       "typescriptVariable":                  {"fg":   "Maroon"},
       "typescriptMethodAccessor":            {"fg":   "AppleRed"},
-      "typescriptClassHeritage":             {"fg":   "DarkOrange"},
       "typescriptReserved":                  {"link": "Preproc"},
       "typescriptGlobal":                    {"fg":   "DarkMagenta"}
+    },
+    "tsx":
+    {
+      "tsxAttrib": {"fg": "DarkGreen"},
+      "tsxIntrinsicTagName": {"fg": "Ginger"},
+      "tsxCloseString": {"fg": "Ginger"}
     },
     "css":
     {

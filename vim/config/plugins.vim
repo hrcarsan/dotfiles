@@ -11,33 +11,29 @@ Plug 'google/vim-searchindex' " show the total of the search matches
 Plug 'moll/vim-bbye' " avoid close window when close a buffer
 Plug 'yuttie/comfortable-motion.vim'
 Plug 'ryanoasis/vim-devicons'
-"Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'kristijanhusak/defx-icons'
 Plug 'santiagohecar/vista.vim'
 Plug 'voldikss/vim-floaterm'
+Plug 'mhinz/vim-startify'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "               SYNTAX AND LANGUAGES SUPPORT
 " TODO:
-" - support angular
 " - support hightlight php and js inside html
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Plug 'StanAngeloff/php.vim',    {'for': 'php'}
 Plug 'santiagohecar/php.vim',    {'for': 'php'}
 Plug 'elzr/vim-json',           {'for': 'json'}
 Plug 'pangloss/vim-javascript', {'for': 'javascript'}
-Plug 'HerringtonDarkholme/yats.vim', {'for': 'typescript'}
 Plug 'othree/html5.vim'
 Plug 'hail2u/vim-css3-syntax'
-"Plug 'adoy/vim-php-refactoring-toolbox'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-"Plug 'c9s/phpunit.vim'
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
+"Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+"Plug 'leafgarland/typescript-vim'
+"Plug 'peitalin/vim-jsx-typescript'
+Plug 'HerringtonDarkholme/yats.vim', {'for': 'typescript'}
+"Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'vim-test/vim-test'
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                      LINTER ENGINE
@@ -103,6 +99,10 @@ Plug '907th/vim-auto-save'
 
 Plug 'neoclide/coc-sources'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+let g:coc_global_extensions = [
+  \ 'coc-tsserver'
+  \ ]
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                       UTILITIES
