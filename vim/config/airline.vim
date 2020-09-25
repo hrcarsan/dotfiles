@@ -37,6 +37,10 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'no_path'
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '⎸'
+"let g:airline#extensions#tabline#buf_label_first = 1
+"let airline#extensions#tabline#current_first = 1
+
+" settings for tabs
 "let g:airline#extensions#tabline#show_close_button = 0
 "let g:airline#extensions#tabline#show_splits = 0
 "let g:airline#extensions#tabline#show_buffers = 0

@@ -58,9 +58,14 @@ nnoremap <leader>n :execute "normal *"<cr>:SearchIndex<cr>
 nnoremap <leader><space> :noh<cr>
 
 " buffers: previous, next, close
-nnoremap <c-h> :bp<cr>:<c-c>
-nnoremap <c-l> :bn<cr>:<c-c>
-nnoremap <c-x> :Bd<cr>
+"nnoremap <c-l> :bn<cr>:<c-c>
+"nnoremap <c-h> :bp<cr>:<c-c>
+nnoremap <silent><c-l> :call airline#extensions#tabline#buflist#goto_next()<cr>
+nnoremap <silent><c-h> :call airline#extensions#tabline#buflist#goto_prev()<cr>
+nnoremap <silent><c-x> :Bd<cr>
+
+nnoremap <silent><a-l> :call airline#extensions#tabline#buflist#move_right()<cr>
+nnoremap <silent><a-h> :call airline#extensions#tabline#buflist#move_left()<cr>
 
 " move lines down/up
 nnoremap - :m .+1<cr>==
