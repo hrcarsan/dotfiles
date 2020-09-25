@@ -37,7 +37,12 @@ endfunction
 
 
 function! sidebar#open_startify() abort
-  Startify
+  if empty(buffer_name())
+    Startify
+    setlocal buflisted
+    setlocal signcolumn=yes
+    execute "file Start"
+  endif
 endfunction
 
 
