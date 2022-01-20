@@ -1,5 +1,5 @@
 " TIPS
-" - overrides php var type:   /** @var central_server $central_server */
+" - overrides php var type:   /** @var central_server */
 
 let g:coc_global_extensions = ['coc-tsserver',
                              \ 'coc-phpls',

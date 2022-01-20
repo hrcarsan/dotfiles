@@ -36,6 +36,7 @@ set rnu                        " relative numbers
 set signcolumn=yes
 set nobackup
 set nowritebackup
+"set iskeyword+=-               " treat - as part of word
 
 " open new split panes to right and below
 "set splitright

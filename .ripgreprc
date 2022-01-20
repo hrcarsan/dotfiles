@@ -1,0 +1,3 @@
+# add in .bashrc export RIPGREP_CONFIG_PATH=~/.ripgreprc
+
+ --type-not svg

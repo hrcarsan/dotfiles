@@ -57,6 +57,8 @@ function! sidebar#open() abort
   endif
 
   Defx
+  setlocal nornu
+  setlocal nonumber
   let g:sb_files_win_id = win_getid()
 
   split __vista__
