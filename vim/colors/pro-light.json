@@ -148,7 +148,11 @@
       "CocInfoFloat":    {"fg": "DarkOrange",  "bg": "LightGrey2"},
       "CocHintSign":     {"fg": "DarkOrange",  "bg": "SoftYellow"},
       "CocHintFloat":    {"fg": "DarkOrange",  "bg": "LightGrey2"},
-      "CocErrorHighlight": {"bg": "Tan"}
+      "CocErrorHighlight": {"bg": "Tan"},
+      "CocInfoHighlight": {"opt": "underline"},
+      "CocUnusedHighlight": {"opt": "underline"},
+      "CocWarningHighlight": {"opt": "underline"},
+      "CocHintHighlight": {"opt": "underline"}
     },
     "denite":
     {
