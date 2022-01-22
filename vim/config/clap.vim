@@ -2,6 +2,8 @@ nmap <silent> <c-k> :Clap buffers<CR>
 nmap <silent> <c-j> :Clap!! files<CR>
 
 let g:clap_layout = {'relative': 'window', 'width': '76%', 'height': '33%', 'row': '5%', 'col': '12%'}
+let g:clap_open_preview = 'never'
+let g:clap_preview_direction = 'UD'
 let g:clap_search_box_border_style = 'nil'
 let g:clap_fuzzy_match_hl_groups = [
   \ [118 , '#FFFFFF'] ,
