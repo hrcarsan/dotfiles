@@ -32,7 +32,7 @@ function! sidebar#init() abort
   let g:sb_editor_win_id = win_getid()
 
   call sidebar#open()
-  call timer_start(100, {timer-> sidebar#open_startify()})
+  call timer_start(300, {timer-> sidebar#open_startify()})
 endfunction
 
 
