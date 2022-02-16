@@ -36,8 +36,9 @@ make
 sudo make install
 ctags --version
 
-# make a link from the dotfiles
-ln -s ~/dotfiles/vim/ ~/.config/nvim
+# settings folders/files
+[ -d ~/.config ] || mkdir ~/.config
+[ -d ~/.config/nvim ] || ln -s ~/dotfiles/vim ~/.config/nvim
 
 # vim plug and plugin installation
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
