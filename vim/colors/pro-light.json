@@ -30,6 +30,7 @@
     "GrayishYellow": {"term": 15,  "hex": "#F2F2C4", "rgb": [200, 175, 135]},
     "GrayishYellow2": {"term": 15,  "hex": "#d9d9b0", "rgb": [200, 175, 135]},
     "PaleBlue":      {"term": 15,  "hex": "#ADD6FF", "rgb": [95, 94, 64]},
+    "PaleBlue2":      {"term": 15,  "hex": "#5FAFFF", "rgb": [95, 94, 64]},
     "PaleGreen":     {"term": 15,  "hex": "#c7ffc7", "rgb": [95, 94, 64]},
     "SoftYellow":    {"term": 15,  "hex": "#fdf589", "rgb": [95, 94, 64]},
     "LightOrange":   {"term": 166, "hex": "#ffb275", "rgb": [215, 95, 0]},

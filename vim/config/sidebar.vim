@@ -56,7 +56,7 @@ function! sidebar#open() abort
     return
   endif
 
-  Defx
+  Defx -ignored-files=""
   setlocal nornu
   setlocal nonumber
   let g:sb_files_win_id = win_getid()

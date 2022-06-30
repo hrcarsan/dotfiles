@@ -96,6 +96,9 @@
     "zlib",
     "redis"
   ],
+  "intelephense.environment.includePaths": [
+    "/zend_framework"
+  ],
   //"intelephense.completion.maxItems": 15,
   //"intelephense.completion.insertUseDeclaration": false,
   //"intelephense.completion.triggerParameterHints": false,
