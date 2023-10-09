@@ -94,7 +94,8 @@
     "Zend OPcache",
     "zip",
     "zlib",
-    "redis"
+    "redis",
+    "newrelic"
   ],
   "intelephense.environment.includePaths": [
     "/zend_framework"

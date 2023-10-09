@@ -34,6 +34,7 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'HerringtonDarkholme/yats.vim', {'for': 'typescript'}
 "Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'vim-test/vim-test'
+Plug 'hashivim/vim-terraform'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                      LINTER ENGINE

@@ -26,6 +26,7 @@ source $HOME/.config/nvim/config/vista.vim
 source $HOME/.config/nvim/config/clap.vim
 source $HOME/.config/nvim/config/test.vim
 source $HOME/.config/nvim/config/start.vim
+source $HOME/.config/nvim/config/syntax.vim
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                           BASICS

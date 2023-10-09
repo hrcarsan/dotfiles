@@ -105,7 +105,7 @@ nmap <c-n> :let @+=expand("%:t")<CR>
 "nnoremap <leader>tw :ToggleWorkspace<CR>
 
 "nnoremap <leader>c :GitGutterToggle<cr>
-nnoremap <leader>z Vi{zfkj
+nnoremap <leader>z Vi{hzfkj
 
 " Show hi group under cursor
 map <leader>hs :call ShowHi()<cr>
